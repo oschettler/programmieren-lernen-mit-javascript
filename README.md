@@ -1,4 +1,3 @@
-programmieren-lernen-mit-javascript
-===================================
+# Programmieren lernen mit Javascript (Buch)
 
-Programmieren lernen mit Javascript (Buch)
+Eine kurze Einführung in die Programmierung
