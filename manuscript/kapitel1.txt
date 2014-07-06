@@ -1,2 +1,25 @@
 # Programmieren lernen mit Javascript
 
+OK, du möchtest programmieren lernen. Javascript ist eine gute Idee.
+Javascript ist die am weitesten verbreitete Programmiersprache. Du
+kannst mit ihr Webseiten programmieren oder Apps für dein Tablet oder
+Handy. Mit Javascript lassen sich spannende Games ebenso schreiben wie
+Anwendungen für eine Bank. Also, los geht’s.
+
+# Was du brauchst
+
+Um Javascript zu programmieren brauchst du einen Computer. Was für einen
+ist eigentlich egal. Am bequemsten ist ein Notebook oder ein PC. Es ist
+egal, welches Betriebssystem du verwendest, also z.B. Windows, Mac oder
+Linux. Wichtig ist, dass du einen Web-Browser installiert hast und
+zumindest manchmal auch eine Internet-Verbindung hast.
+
+Unsere Beispiele zeigen wir im Chrome-Browser von Google. Der läuft auf
+allen Betriebssystemen. Wir benutzen die Konsole von Chrome für unsere
+ersten Schritte mit Javascript. Andere Browser haben etwas ähnliches.
+Ich will dir hier aber nicht zig verschiedene Browser erklären. Also,
+verwende einfach Chrome. Später kannst du natürlich auch andere Browser
+verwenden: Firefox, Safari, Opera oder Internet Explorer. Alle
+unterstützen Javascript.
+
+
