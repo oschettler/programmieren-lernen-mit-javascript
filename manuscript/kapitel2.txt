@@ -51,7 +51,7 @@ Wow! Da ist ja einiges dazu gekommen. Neben unserem Formular gibt es jetzt noch 
 
 ## Elemente eines Javascript-Programmes
 
-Javascript-Programme können in einem <script>-Block direkt in eine HTML-Datei geschrieben werden. Normalerweise schreibt man <script>-Blöcke *unter* das übrige HTML. Das ist wichtig, damit der Browser das HTML vom Web-Server bereits geladen hat, wenn er das Javascript-Programm ausführt. Wir wollen ja die Eingabefelder auslesen. Das funktioniert nicht, wenn die Seite noch gar nicht vollständig geladen ist.
+Javascript-Programme können in einem &lt;script>-Block direkt in eine HTML-Datei geschrieben werden. Normalerweise schreibt man &lt;script>-Blöcke *unter* das übrige HTML. Das ist wichtig, damit der Browser das HTML vom Web-Server bereits geladen hat, wenn er das Javascript-Programm ausführt. Wir wollen ja die Eingabefelder auslesen. Das funktioniert nicht, wenn die Seite noch gar nicht vollständig geladen ist.
 
 Javascript kann rechnen. Das kannst du direkt ausprobieren, wenn du die Konsole unseres Chrome-Browsers öffnest, entweder über den Menüeintrag Anzeigen / Entwickler / Javascript-Konsole oder über die Tastenkombination ALT-CMD-J:
 
@@ -83,7 +83,24 @@ Der Name wird bei einem Attribut *id* angegeben. Ein ID-Name darf in einem HTML-
 
 <<[Holen des Elementes mit ID "aufgabe" (das Formular)](code/getelementbyid.html)
 
+Auch die beiden Eingabeelemente `&lt;input id="zahl1">`, `&lt;input id="zahl2">` und der Textbereich für das Ergebnis `&lt;span id="ergebnis"></span>` werden auf diese Weise Variablen zugewiesen.
 
+## Ereignisse
 
+Wie aber wird gesteuert, dass die Berechnung erst bei Drücken des Knopfes erfolgt? Der Knopf ist vom Typ *submit*. Ein solcher Knopf löst beim Drücken das Formular aus, in dem er steckt.
 
+In Javascript-Programmen kannst du auf Aktionen des Nutzers reagieren, indem du auf Ereignisse reagierst. Wird z.B. ein Formular abgeschickt, so wird ein *submit*-Ereignis ausgelöst.
 
+Die Aktionen, die beim Eintreffen eines Ereignisses ausgeführt werden sollen, schreibst du in eine Funktion. Funktionen sammeln eine Reihe von Anweisungen:
+
+<<[Eine Funktion](code/erste_funktion.html)
+
+Diese Anweisung besagt, das beim Absenden des Formulars (on submit) die Anweisungen einer Funktion ausgeführt werden sollen. Der Code innerhalb der geschweiften Klammern wird also erst dann aufgerufen, wenn der Knopf gedrückt wird.
+
+Im Beispiel ist das der Code in den Zeilen 9 .. 16. Die ersten Zeilen hatten wir uns schon angeschaut. Hier werden HTML-Elemente an Variable zugewiesen. In Zeile 14 wird die eigentliche Rechenaufgabe gelöst und das Ergebnis in den Ergebnis-Textbereich geschrieben.
+
+Interessant hierbei ist, dass du auf den Wert eines Eingabe-Feldes über *.value* und auf einen Textbereich über *.innerHTML* zugegreifen kannst.
+
+Die beiden `parseInt()` sind notwendig, damit Javascript die Werte aus den Eingabefeldern mit + nicht einfach hintereinander hängt, sondern als Zahlen addiert. Eigentlich liefern Eingabefelder nämlich keine Zahlen, sondern Texte. Wendest du auf zwei Texte + an, so werden sie hintereinander gehängt. Aus "22" + "33" wird also "2233". Erst nach Umwandeln der Texte in Zahlen über den Aufruf von parseInt() macht + die erwartete Adition.
+
+Das `return false` in Zeile 16 sagt dem Formular, dass mit dem Ausführen dieser Anweisungen die Behandlung des Abschickens beendet ist. Fehlt diese Zeile, so wird das Ergebnis direkt wieder gelöscht, weil die Seite nach Abschicken des Formulars neu aufgebaut wird.
