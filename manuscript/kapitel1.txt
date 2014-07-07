@@ -20,11 +20,19 @@ Obwohl Anfang der 1990er Jahre bereits viele Computer - auch in Deutschland - an
 
 Das Word Wide Web (WWW) wurde dann 1991 von Tim Berners-Lee [erfunden,](http://de.wikipedia.org/wiki/World_Wide_Web) der an der Schweizer Forschungseinrichtung CERN einen Weg suchte, Forschungsergebnisse leichter auszutauschen.
 
-Tims World Wide Web besteht aus vier Dingen:
+Das World Wide Web besteht aus drei Ideen:
 
-* Ein Adressformat für Dokumente im World Wide Web. Genau wie Pakete Postadressen aus Strasse, Hausnummer, Postleitzahl, Stadt und vielleicht noch Land brauchen, so besten auch Adressen wie https://www.google.de/webhp?q=Javascript+Buch im WWW aus verschiedenen Teilen: Einem Protokoll https, der Domain-Adresse des Rechners www.google.de, einem Pfad /webhp und vielleicht noch ein paar weiteren Teilen wie im Beispiel ein Suchwort q=Javascript+Buch. Web-Adressen dürfen keine Leerzeichen enthalten. Wenn also ein Suchwort mit einem Leerzeichen in der Adresse enthalten sein soll, müssen die Leerzeichen durch Pluszeichn ersetzt werden.
+*Ein Adressformat* für Dokumente im World Wide Web. Genau wie Pakete Postadressen aus Strasse, Hausnummer, Postleitzahl, Stadt und vielleicht noch Land brauchen, so besten auch Adressen wie https://www.google.de/webhp?q=Javascript+Buch im WWW aus verschiedenen Teilen: Einem Protokoll https, der Domain-Adresse des Rechners www.google.de, einem Pfad /webhp und vielleicht noch ein paar weiteren Teilen wie im Beispiel ein Suchwort q=Javascript+Buch. Web-Adressen dürfen keine Leerzeichen enthalten. Wenn also ein Suchwort mit einem Leerzeichen in der Adresse enthalten sein soll, müssen die Leerzeichen durch Pluszeichn ersetzt werden.
 
-* Einem Format, in dem Texte geschrieben werden müssen, damit sie im WWW veröffentlicht werden können. Tim nannte dieses Format Hypertext Markup Language, kurz HTML. HTML-Dateien sind einfache Textdateien mit der Endung .html. Sie enthalten Text und Bereiche in spitzen Klammern (< und >), den sogenannten Tags. Tags dienen zur Formatierung von Überschriften (z.B. <h1>Frühstück</h1>) oder Fettdruck (<strong>wichtig</strong>), sie markieren Listen (<ul><li>Brot</li><li>Käse</li></ul>) und sie zeigen auf andere Dokumente (<a href="https://leanpub.com/programmieren-lernen-mit-javascript/writing_settings">Javascript-Buch</a>).
+*Ein Textformat*, in dem Dokumente im WWW veröffentlicht werden können. Tim nannte dieses Format Hypertext Markup Language, kurz HTML. HTML-Dateien sind einfache Textdateien mit der Endung .html. Sie enthalten Text und Bereiche in spitzen Klammern (< und >), den sogenannten Tags. Tags dienen zur Formatierung von Überschriften (z.B. <h1>Frühstück</h1>) oder Fettdruck (<strong>wichtig</strong>), sie markieren Listen (<ul><li>Brot</li><li>Käse</li></ul>) und sie zeigen auf andere Dokumente (<a href="https://leanpub.com/programmieren-lernen-mit-javascript/writing_settings">Javascript-Buch</a>).
 
-* Tim erfand auch ein neues Verfahren, Dateien zwischen Rechnern auszutauschen. Er nannte dieses Verfahren das Hypertext Transfer Protokoll, abgekürzt HTTP.
+*Ein Verfahren zum Austausch von Dateien zwischen Computern*. Tim nannte dieses Verfahren das Hypertext Transfer Protokoll, abgekürzt HTTP.
+
+Neben diesen Ideen sind noch zwei Arten von Programmen notwendig, damit Paul sich den Tabellenstand seiner Mannschaft bei seinem Heimatverein FC Rheinsüd anschauen kann. Der Verein hat eine eigene Homepage unter http://www.rheinsued.de. Auf dem Computer mit der Adresse des Vereins www.rheinsued.de muss dazu ein *Webserver* laufen. Paul selbst braucht auf seinem Computer (oder Handy oder Tablet) einen *Browser*, mit dem die Startseite des FC Rheinsüd abrufen kann.
+
+Die Ergebnisse der letzten Spieltage sind allerdings nicht auf den Seiten des Vereins zu finden, sondern unter http://community.fussball.de/de/verein_ergebnisse/rheinsued-koeln-ev/23060810.html. Von der
+
+Webserver und Browser sind beides Computer-Programme. Im Beispiel bekommt der Webserver auf dem Computer mit der Adresse community.fussball.de von Paul die Adresse einer bestimmten Seite genannt, nämlich /de/verein/rheinsued-koeln-ev/23060810.html. Der Webserver schaut dann in seinen Dateiordnern nach, findet die HTML-Datei 23060810.html und schickt sie über das Internet an den Browser auf Pauls Computer. Dieser liest die Textdatei und stellt die enthaltenen Daten auf Pauls Bildschirm dar. Das sieht dann so aus:
+
+!images/ergebnisse_rheinsaed.png!
 
