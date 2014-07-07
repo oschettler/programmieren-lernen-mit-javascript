@@ -1,0 +1,19 @@
+<html>
+  <form id="aufgabe">
+    <input id="zahl1"> + <input id="zahl2"> = <span id="ergebnis"></span>
+    <button type="submit">Rechne!</button>
+  </form>
+  <script>
+  var formular = document.getElementById('aufgabe');
+  formular.onsubmit = function () {
+    var
+      zahl1 = document.getElementById('zahl1').value,
+      zahl2 = document.getElementById('zahl2').value,
+      ergebnis = document.getElementById('ergebnis');
+
+    ergebnis.innerHTML = parseInt(zahl1) + parseInt(zahl2);
+
+    return false;
+  };
+  </script>
+</html>

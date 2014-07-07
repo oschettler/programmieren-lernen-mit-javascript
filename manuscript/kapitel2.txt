@@ -1,6 +1,6 @@
 # Kapitel 2 - Erste Schritte mit Javascript
 
-In diesem Kapitel wollen wir unsere ersten Experimente mit Javascript machen. Als Beispiel schreiben wir ein einfaches Spiel.
+In diesem Kapitel wollen wir unsere ersten Experimente mit Javascript machen.
 
 ## Javascript und HTML
 
@@ -10,9 +10,13 @@ Bereits von Anfang an jedoch waren Formulare Teil von HTML. Mit Formularen könn
 
 <<[Web-Seite mit einfachem Formular](code/rechner.html)
 
+Der Web-Dienst http://jsfiddle.net/ erlaubt es uns, kleine Beispiele auf dem Computer des Dienstes abzulegen. Du kannst aber das Beispiel auch in einem Text-Editor (Lade dir z.B. [Atom](https://atom.io/) herunter; es ist ein guter und kostenloser Editor) eingeben und als Datei rechner.html auf deinem Compute speichern. Wenn du dann im Finder/Explorer die Datei durch Doppelklick öffnest, zeigt der Browser dir das Formular an:
+
+!images/rechner.png!
+
 Dieses Formular enthält den üblichen Rahmen einer HTML-Seite, darin das Element <form> ... </form>, darin zwei Eingabe-Elemente und ein Element für das Ergebnis. Elemente in HTML, die sogenannten Tags, werden mit spitzen Klammern eingeschlossen. Der Browser kann sie so vom normalen Text der Web-Seite unterscheiden. Alles, was in spitzen Klammern steht, ist also ein Tag.
 
-Tags können in Paaren oder einzeln auftreten: <html> ... </html>, <form> ... </form> und <span> ... </span> sind Paare, <input> ist ein Einzelelement. Ein Tag ist immer gleich aufgebaut:
+Tags können in Paaren (als sog. Block) oder einzeln auftreten: <html> ... </html>, <form> ... </form> und <span> ... </span> sind Blöcke, <input> ist ein Einzelelement. Ein Tag ist immer gleich aufgebaut:
 
 * <
 * Name des Tags, z.B. html, form oder input. Es spielt dabei keine Rolle, ob der Tag-Name groß oder klein geschrieben wird. Für den Browser ist <html> dasselbe wie <HTML>.
@@ -20,3 +24,17 @@ Tags können in Paaren oder einzeln auftreten: <html> ... </html>, <form> ... </
 * >
 
 Bei Paaren folgt im schließenden Tag auf < ein /. Nur das öffnende Tag enthält Attribute.
+
+Für sich genommen macht dieses Formular noch nichts. Klickst du auf den Knopf, passiert nichts. Klassisch benötigte man ein Programm auf dem Webserver, um die Daten aus solch einem Formular entgegenzunehmen und zu verarbeiten.
+
+Dasselbe geht aber auch mit Javascript. Ergänze unsere HTML-Seite folgendermaßen:
+
+<<[Web-Seite mit einfachem Formular](code/rechner_js.html)
+
+Wow! Da ist ja einiges dazu gekommen. Neben unserem Formular gibt es jetzt noch einen <script> ... </script>-Block mit meinem Javascript-Programm. Dieses Programm liest die beiden Zahlen aus den Eingabefeldern und gibt ihre Summe aus, wenn du auf den Knopf drückst. Aber langsam ...
+
+## Elemente eines Javascript-Programmes
+
+Javascript-Programme können in einem <script>-Block direkt in eine HTML-Datei geschrieben werden. Normalerweise schreibt man <script>-Blöcke *unter* das übrige HTML. Das ist wichtig, damit der Browser das HTML vom Web-Server bereits geladen hat, wenn er das Javascript-Programm ausführt. Wir wollen ja die Eingabefelder auslesen. Das funktioniert nicht, wenn die Seite noch gar nicht vollständig geladen ist.
+
+
