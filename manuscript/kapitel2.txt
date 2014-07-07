@@ -53,4 +53,37 @@ Wow! Da ist ja einiges dazu gekommen. Neben unserem Formular gibt es jetzt noch 
 
 Javascript-Programme können in einem <script>-Block direkt in eine HTML-Datei geschrieben werden. Normalerweise schreibt man <script>-Blöcke *unter* das übrige HTML. Das ist wichtig, damit der Browser das HTML vom Web-Server bereits geladen hat, wenn er das Javascript-Programm ausführt. Wir wollen ja die Eingabefelder auslesen. Das funktioniert nicht, wenn die Seite noch gar nicht vollständig geladen ist.
 
+Javascript kann rechnen. Das kannst du direkt ausprobieren, wenn du die Konsole unseres Chrome-Browsers öffnest, entweder über den Menüeintrag Anzeigen / Entwickler / Javascript-Konsole oder über die Tastenkombination ALT-CMD-J:
+
+![Öffnen der Konsole](images/menu_konsole.png)
+
+Gib dann eine einfache Rechenaufgabe ein, z.B. 17 + 19:
+
+![Rechnen in der Console des Browsers](images/rechnen_konsole.png)
+
+Javascript kann sich Zahlen und andere Dinge, z.B. Texte, in Variablen merken. Den Inhalt einer Variablen bekommst du, indem du ihren Namen schreibst. Hier speichern wir die Zahl 17 in einer Variable mit Namen *zahl1* und holen diese Zahl anschließend wieder zum Vorschein:
+
+![Eine Variable namens "zahl1"](images/zahl1.png)
+
+Mit Variablen kannst du auch rechnen:
+
+![Mit Variablen rechnen](images/variable_rechnen.png)
+
+Unser Programm definiert vier Variable:
+
+* *formular* speichert das HTML-Formular
+* *zahl1* und *zahl2* speichern die Werte aus den Eingabefeldern
+* *ergebnis* speichert den Textbereich für die Ausgabe des Ergebnisses
+
+Man kann also tatsächlich nicht nur einfache Zahlen oder Texte in Variablen speichern, sondern auch HTML-Elemente. Dazu musst du ihnen einen Namen geben. Das Formular hat z.B. den Namen *aufgabe*:
+
+<<[Formular namens "aufgabe"](code/formular_aufgabe.html)
+
+Der Name wird bei einem Attribut *id* angegeben. Ein ID-Name darf in einem HTML-Dokument nur ein einziges Mal vorkommen. Aus diesem Grund ist es möglich, das Formular über den Aufruf von der Funktion *getElementById()* zu holen und in eine Variable zu schreiben:
+
+<<[Holen des Elementes mit ID "aufgabe" (das Formular)](code/getelementbyid.html)
+
+
+
+
 
