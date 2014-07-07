@@ -1,0 +1,3 @@
+# Danke
+
+Ich habe dieses Buch für meinen Sohn Paul geschrieben, der in den Sommerferien lernen wollte, eine App mit dem [Phaser-Framework](http://phaser.io/) schreiben wollte und einen Crash-Kurs in Javascript brauchte.
