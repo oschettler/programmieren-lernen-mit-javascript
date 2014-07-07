@@ -1,0 +1,22 @@
+# Kapitel 2 - Erste Schritte mit Javascript
+
+In diesem Kapitel wollen wir unsere ersten Experimente mit Javascript machen. Als Beispiel schreiben wir ein einfaches Spiel.
+
+## Javascript und HTML
+
+Die Programmiersprache Javascript gehörte nicht von Anfang an zum World Wide Web. Sie wurde vielmehr erst 1995 von Brendan Eich, einem Programmierer beim damaligen Browser-Hersteller Netscape, [entwickelt](http://de.wikipedia.org/wiki/JavaScript). Javascript war anfangs nur zur Ausführung in Browsern gedacht. Heute läuft es aber auch auf Webservern. Es gibt sogar inzwischen kleine Minicomputer, die direkt Javascript-Programme ausführen können ([Espruino](http://www.espruino.com/), [Tessel](https://tessel.io/)).
+
+Bereits von Anfang an jedoch waren Formulare Teil von HTML. Mit Formularen können Web-Seiten Daten entgegennehmen. Hier ist eine Web-Seite mit einem einfachen Formular ([Einfaches Formular](http://jsfiddle.net/olav/Ngvd4/)):
+
+<<[Web-Seite mit einfachem Formular](code/rechner.html)
+
+Dieses Formular enthält den üblichen Rahmen einer HTML-Seite, darin das Element <form> ... </form>, darin zwei Eingabe-Elemente und ein Element für das Ergebnis. Elemente in HTML, die sogenannten Tags, werden mit spitzen Klammern eingeschlossen. Der Browser kann sie so vom normalen Text der Web-Seite unterscheiden. Alles, was in spitzen Klammern steht, ist also ein Tag.
+
+Tags können in Paaren oder einzeln auftreten: <html> ... </html>, <form> ... </form> und <span> ... </span> sind Paare, <input> ist ein Einzelelement. Ein Tag ist immer gleich aufgebaut:
+
+* <
+* Name des Tags, z.B. html, form oder input. Es spielt dabei keine Rolle, ob der Tag-Name groß oder klein geschrieben wird. Für den Browser ist <html> dasselbe wie <HTML>.
+* kein, ein oder mehrere Attribute in der Form Name="Wert", z.B. id="zahl1".
+* >
+
+Bei Paaren folgt im schließenden Tag auf < ein /. Nur das öffnende Tag enthält Attribute.
