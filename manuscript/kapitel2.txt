@@ -12,7 +12,7 @@ Bereits von Anfang an jedoch waren Formulare Teil von HTML. Mit Formularen könn
 
 Der Web-Dienst http://jsfiddle.net/ erlaubt es uns, kleine Beispiele auf dem Computer des Dienstes abzulegen. Du kannst aber das Beispiel auch in einem Text-Editor (Lade dir z.B. [Atom](https://atom.io/) herunter; es ist ein guter und kostenloser Editor) eingeben und als Datei rechner.html auf deinem Compute speichern. Wenn du dann im Finder/Explorer die Datei durch Doppelklick öffnest, zeigt der Browser dir das Formular an:
 
-!images/rechner.png!
+![Einfaches Formular](images/rechner.png)
 
 Dieses Formular enthält den üblichen Rahmen einer HTML-Seite, darin das Element <form> ... </form>, darin zwei Eingabe-Elemente und ein Element für das Ergebnis. Elemente in HTML, die sogenannten Tags, werden mit spitzen Klammern eingeschlossen. Der Browser kann sie so vom normalen Text der Web-Seite unterscheiden. Alles, was in spitzen Klammern steht, ist also ein Tag.
 
