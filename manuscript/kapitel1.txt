@@ -1,4 +1,4 @@
-# Kapitel 1 - Bevor wir loslegen
+# 1 - Bevor wir loslegen
 
 Du möchtest programmieren lernen. Javascript ist eine gute Wahl. Javascript ist die am weitesten verbreitete Programmiersprache. Du kannst mit ihr Webseiten oder Apps für dein Tablet oder Handy programmieren. Mit Javascript lassen sich spannende Games ebenso schreiben wie Anwendungen für eine Bank. Also, los geht’s!,
 
@@ -24,7 +24,7 @@ Das World Wide Web besteht aus drei Ideen:
 
 **Ein Adressformat** für Dokumente im World Wide Web. Genau wie Pakete Postadressen aus Strasse, Hausnummer, Postleitzahl, Stadt und vielleicht noch Land brauchen, so besten auch Adressen wie https://www.google.de/webhp?q=Javascript+Buch im WWW aus verschiedenen Teilen: Einem Protokoll https, der Domain-Adresse des Rechners www.google.de, einem Pfad /webhp und vielleicht noch ein paar weiteren Teilen wie im Beispiel ein Suchwort q=Javascript+Buch. Web-Adressen dürfen keine Leerzeichen enthalten. Wenn also ein Suchwort mit einem Leerzeichen in der Adresse enthalten sein soll, müssen die Leerzeichen durch Pluszeichn ersetzt werden.
 
-**Ein Textformat**, in dem Dokumente als Web-Seiten im WWW veröffentlicht werden können. Tim nannte dieses Format Hypertext Markup Language, kurz HTML. HTML-Dateien sind einfache Textdateien mit der Endung .html. Sie enthalten Text und Bereiche in spitzen Klammern (< und >), den sogenannten Tags. Tags dienen zur Formatierung von Überschriften (z.B. <h1>Frühstück</h1>) oder Fettdruck (<strong>wichtig</strong>), sie markieren Listen (<ul><li>Brot</li><li>Käse</li></ul>) oder sie zeigen auf andere Dokumente (<a href="https://leanpub.com/programmieren-lernen-mit-javascript/writing_settings">Javascript-Buch</a>).
+**Ein Textformat**, in dem Dokumente als Web-Seiten im WWW veröffentlicht werden können. Tim nannte dieses Format Hypertext Markup Language, kurz HTML. HTML-Dateien sind einfache Textdateien mit der Endung .html. Sie enthalten Text und Bereiche in spitzen Klammern (&lt; und &gt;), den sogenannten Tags. Tags dienen zur Formatierung von Überschriften (z.B. &lt;h1>Frühstück&lt;/h1>) oder Fettdruck (&lt;strong>wichtig&lt;/strong>), sie markieren Listen (&lt;ul>&lt;li>Brot&lt;/li>&lt;li>Käse&lt;/li>&lt;/ul>) oder sie zeigen auf andere Dokumente (&lt;a href="https://leanpub.com/programmieren-lernen-mit-javascript/writing_settings">Javascript-Buch&lt;/a>).
 
 **Ein Verfahren zum Austausch von Dateien zwischen Computern**. Tim nannte dieses Verfahren das Hypertext Transfer Protokoll, abgekürzt HTTP.
 

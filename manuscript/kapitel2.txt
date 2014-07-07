@@ -1,4 +1,4 @@
-# Kapitel 2 - Erste Schritte mit Javascript
+# 2 - Erste Schritte mit Javascript
 
 In diesem Kapitel wollen wir unsere ersten Experimente mit Javascript machen.
 
@@ -14,24 +14,40 @@ Der Web-Dienst http://jsfiddle.net/ erlaubt es uns, kleine Beispiele auf dem Com
 
 ![Einfaches Formular](images/rechner.png)
 
-Dieses Formular enthält den üblichen Rahmen einer HTML-Seite, darin das Element <form> ... </form>, darin zwei Eingabe-Elemente und ein Element für das Ergebnis. Elemente in HTML, die sogenannten Tags, werden mit spitzen Klammern eingeschlossen. Der Browser kann sie so vom normalen Text der Web-Seite unterscheiden. Alles, was in spitzen Klammern steht, ist also ein Tag.
+Dieses Formular enthält den üblichen Rahmen einer HTML-Seite, darin das Element &lt;form> ... &lt;/form>, darin zwei Eingabe-Elemente und ein Element für das Ergebnis. Elemente in HTML, die sogenannten Tags, werden mit spitzen Klammern eingeschlossen. Der Browser kann sie so vom normalen Text der Web-Seite unterscheiden. Alles, was in spitzen Klammern steht, ist also ein Tag.
 
-Tags können in Paaren (als sog. Block) oder einzeln auftreten: <html> ... </html>, <form> ... </form> und <span> ... </span> sind Blöcke, <input> ist ein Einzelelement. Ein Tag ist immer gleich aufgebaut:
+Tags können in Paaren (als sog. Block) oder einzeln auftreten: &lt;html> ... &lt;/html>, &lt;form> ... &lt;/form> und &lt;span> ... &lt;/span> sind Blöcke, &lt;input> ist ein Einzelelement. Ein Tag ist immer gleich aufgebaut:
 
-* <
-* Name des Tags, z.B. html, form oder input. Es spielt dabei keine Rolle, ob der Tag-Name groß oder klein geschrieben wird. Für den Browser ist <html> dasselbe wie <HTML>.
+* &lt;
+* Name des Tags, z.B. html, form oder input. Es spielt dabei keine Rolle, ob der Tag-Name groß oder klein geschrieben wird. Für den Browser ist &lt;html> dasselbe wie &lt;HTML>.
 * kein, ein oder mehrere Attribute in der Form Name="Wert", z.B. id="zahl1".
-* >
+* &gt;
 
-Bei Paaren folgt im schließenden Tag auf < ein /. Nur das öffnende Tag enthält Attribute.
+Bei Paaren folgt im schließenden Tag auf &lt; ein /. Nur das öffnende Tag enthält Attribute.
 
-Für sich genommen macht dieses Formular noch nichts. Klickst du auf den Knopf, passiert nichts. Klassisch benötigte man ein Programm auf dem Webserver, um die Daten aus solch einem Formular entgegenzunehmen und zu verarbeiten.
+Im HTML gibt es eine ganze Reihe von nützlichen Tags. Hier sind die Wichtigsten:
+
+| Tag         | Nutzen               | Beispiel                                                 |
+|-------------|----------------------|----------------------------------------------------------|
+| &lt;h1>     | Große Überschrift    | &lt;h1>Seitentitel&lt;/h1>                               |
+| &lt;h2>     | Mittlere Überschrift | &lt;h2>Erster Abschnitt&lt;/h2>                          |
+| &lt;h3>     | Kleine Überschrift   | &lt;h3>Artikel Eins&lt;/h3>                              |
+| &lt;p>      | Absatz ("Paragraph") | &lt;p>Dieses Formular ...&lt;/p>                         |
+| &lt;ul>     | Liste                | &lt;ul>&lt;li>heute&lt;/li>&lt;li>morgen&lt;/li>&lt;/ul> |
+| &lt;ol>     | Nummerierte Liste    | &lt;ol>&lt;li>eins&lt;/li>&lt;li>zwei&lt;/li>&lt;/ul>    |
+| &lt;span>   | Textbereich          | Ergebnis: &lt;span>0&lt;/span>                           |
+| &lt;img>    | Bild                 | &lt;img src="images/rechner.png">                        |
+| &lt;a>      | Link                 | &lt;a href="http://google.de">Google&lt;/a>              |
+
+[SELFHTML](http://de.selfhtml.org/navigation/html.htm) enthält eine umfassende Zusammenfassung der HTML-Tags.
+
+Für sich genommen macht unser Formular noch nichts. Klickst du auf den Knopf, passiert nichts. Klassisch benötigte man ein Programm auf dem Webserver, um die Daten aus solch einem Formular entgegenzunehmen und zu verarbeiten.
 
 Dasselbe geht aber auch mit Javascript. Ergänze unsere HTML-Seite folgendermaßen:
 
 <<[Web-Seite mit einfachem Formular](code/rechner_js.html)
 
-Wow! Da ist ja einiges dazu gekommen. Neben unserem Formular gibt es jetzt noch einen <script> ... </script>-Block mit meinem Javascript-Programm. Dieses Programm liest die beiden Zahlen aus den Eingabefeldern und gibt ihre Summe aus, wenn du auf den Knopf drückst. Aber langsam ...
+Wow! Da ist ja einiges dazu gekommen. Neben unserem Formular gibt es jetzt noch einen &lt;script> ... &lt;/script>-Block mit meinem Javascript-Programm. Dieses Programm liest die beiden Zahlen aus den Eingabefeldern und gibt ihre Summe aus, wenn du auf den Knopf drückst. Aber langsam ...
 
 ## Elemente eines Javascript-Programmes
 
