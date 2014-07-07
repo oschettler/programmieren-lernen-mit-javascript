@@ -1,25 +1,68 @@
-# Programmieren lernen mit Javascript
+## Bevor wir loslegen
 
-OK, du möchtest programmieren lernen. Javascript ist eine gute Idee.
+Du möchtest programmieren lernen. Javascript ist eine gute Idee.
 Javascript ist die am weitesten verbreitete Programmiersprache. Du
 kannst mit ihr Webseiten programmieren oder Apps für dein Tablet oder
 Handy. Mit Javascript lassen sich spannende Games ebenso schreiben wie
 Anwendungen für eine Bank. Also, los geht’s.
 
-# Was du brauchst
+## Was du brauchst
 
 Um Javascript zu programmieren brauchst du einen Computer. Was für einen
 ist eigentlich egal. Am bequemsten ist ein Notebook oder ein PC. Es ist
 egal, welches Betriebssystem du verwendest, also z.B. Windows, Mac oder
 Linux. Wichtig ist, dass du einen Web-Browser installiert hast und
-zumindest manchmal auch eine Internet-Verbindung hast.
+zumindest manchmal auch eine Internet-Verbindung hast. EIn Tablet oder
+Handy tut's am Anfang leider nicht; der Browser hat keine Möglichkeit,
+direkt Javascript einzugeben. Ausserdem wird es mit der
+Bildschirmtastatur schnell recht eng.
 
-Unsere Beispiele zeigen wir im Chrome-Browser von Google. Der läuft auf
-allen Betriebssystemen. Wir benutzen die Konsole von Chrome für unsere
-ersten Schritte mit Javascript. Andere Browser haben etwas ähnliches.
-Ich will dir hier aber nicht zig verschiedene Browser erklären. Also,
-verwende einfach Chrome. Später kannst du natürlich auch andere Browser
-verwenden: Firefox, Safari, Opera oder Internet Explorer. Alle
-unterstützen Javascript.
+Unsere ersten Schritte machen wir im Chrome-Browser von Google. Der
+läuft auf allen Betriebssystemen. Wir benutzen die Konsole von Chrome
+für unsere ersten Schritte mit Javascript. Andere Browser haben etwas
+ähnliches. Ich will dir hier aber nicht zig verschiedene Browser
+erklären. Also, verwende einfach Chrome. Später kannst du natürlich auch
+auf einen anderen Browser umsteigen: Firefox, Safari, Opera oder
+Internet Explorer. Alle unterstützen Javascript.
 
+## Ein paar Grundbegriffe
 
+Jetzt wird es vielleicht für den einen oder anderen etwas langweilig.
+Schließlich bist du mit deinem Handy den ganzen Tag bei Facebook,
+Snapchat oder Whatsapp unterwegs und weißt also alles über das Internet.
+Wenn du aber wirklich mit der Programmierung klarkommen willst, ist es
+wichtig, ein paar Dinge auseinander zu halten. Also, halte durch, ich
+mache es auch kurz.
+
+### Internet und Word Wide Web
+
+Das Internet ist ein weltweiter Zusammenschluß von Computern. Erfunden
+haben das Amerikaner in der Zeit des kalten Krieges mit Russland in den
+1960er Jahren. Man wollte ein Computernetz haben, dass auch im Fall
+eines Atomkrieges weiter funktionieren würde.
+
+Im Internet hat jeder Computer eine eindeutige Adresse, seine
+IP-Adresse. Ein Beispiel ist 173.194.70.94. Diese Adressen sind etwas
+unhandlich und wurden Anfang der 1980er Jahre durch Domain-Namen
+ergänzt. Zusätzlich zu seiner IP-Adresse erhält damit ein Computer einen
+leichter zu merkenden, Namen, z.B. www.google.de. solch ein Domain-Name
+besteht oft aus einer Kette von Einzelnamen, die mit Punkten getrennt
+sind und von rechts nach Links gelesen werden. Ganz rechts steht das
+Land, dann die Firma, dann der Computer. Statt der Länderkennung gibt es
+schon lange Endungen wie .com, .org und seit kurzem auch Dinge wie
+.berlin, .club oder .guru.
+
+Obwohl Anfang der 1990er Jahre bereits viele Computer - auch in
+Deutschland - an das Internet angeschlossen waren, war es sehr schierig,
+zu wissen, auf welchem Computer bestimmte Dateien gespeichert waren. Das
+behinderte besonders die Forscher, die neben dem Militär die wichtigsten
+Nutzer des Internets waren. Sie wollten nämlich ihre
+Forschungsergebnisse über das Inernet austauschen. Zu der Zeit war es
+normal, mit langen ausgedruckten Listen von Computern und Speicherorten
+für wichtige Dateien herumzulaufen.
+
+Das Word Wide Web (WWW) wurde dann 1991 von Tim Berners-Lee
+[erfunden,][] der an der Schweizer Forschungseinrichtung CERN einen Weg
+suchte, Forschungsergebnisse besser auszutauschen.
+
+  [erfunden,]: http://de.wikipedia.org/wiki/World_Wide_Web
