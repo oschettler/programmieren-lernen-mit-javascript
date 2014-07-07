@@ -47,11 +47,11 @@ Dasselbe geht aber auch mit Javascript. Ergänze unsere HTML-Seite folgendermaß
 
 <<[Web-Seite mit einfachem Formular](code/rechner_js.html)
 
-Wow! Da ist ja einiges dazu gekommen. Neben unserem Formular gibt es jetzt noch einen &lt;script> ... &lt;/script>-Block mit meinem Javascript-Programm. Dieses Programm liest die beiden Zahlen aus den Eingabefeldern und gibt ihre Summe aus, wenn du auf den Knopf drückst. Aber langsam ...
+Wow! Da ist ja einiges dazu gekommen. Der Code des Beispiels liegt bei [jsfiddle](http://jsfiddle.net/olav/ER6C4/). Neben unserem Formular gibt es jetzt noch einen &lt;script> ... &lt;/script>-Block mit meinem Javascript-Programm. Dieses Programm liest die beiden Zahlen aus den Eingabefeldern und gibt ihre Summe aus, wenn du auf den Knopf drückst. Aber langsam ...
 
 ## Elemente eines Javascript-Programmes
 
-Javascript-Programme können in einem &lt;script>-Block direkt in eine HTML-Datei geschrieben werden. Normalerweise schreibt man &lt;script>-Blöcke *unter* das übrige HTML. Das ist wichtig, damit der Browser das HTML vom Web-Server bereits geladen hat, wenn er das Javascript-Programm ausführt. Wir wollen ja die Eingabefelder auslesen. Das funktioniert nicht, wenn die Seite noch gar nicht vollständig geladen ist.
+Javascript-Programme können in einem &lt;script&gt;-Block direkt in eine HTML-Datei geschrieben werden. Normalerweise schreibt man &lt;script&gt;-Blöcke *unter* das übrige HTML. Das ist wichtig, damit der Browser das HTML vom Web-Server bereits geladen hat, wenn er das Javascript-Programm ausführt. Wir wollen ja die Eingabefelder auslesen. Das funktioniert nicht, wenn die Seite noch gar nicht vollständig geladen ist.
 
 Javascript kann rechnen. Das kannst du direkt ausprobieren, wenn du die Konsole unseres Chrome-Browsers öffnest, entweder über den Menüeintrag Anzeigen / Entwickler / Javascript-Konsole oder über die Tastenkombination ALT-CMD-J:
 
@@ -101,6 +101,6 @@ Im Beispiel ist das der Code in den Zeilen 9 .. 16. Die ersten Zeilen hatten wir
 
 Interessant hierbei ist, dass du auf den Wert eines Eingabe-Feldes über *.value* und auf einen Textbereich über *.innerHTML* zugegreifen kannst.
 
-Die beiden `parseInt()` sind notwendig, damit Javascript die Werte aus den Eingabefeldern mit + nicht einfach hintereinander hängt, sondern als Zahlen addiert. Eigentlich liefern Eingabefelder nämlich keine Zahlen, sondern Texte. Wendest du auf zwei Texte + an, so werden sie hintereinander gehängt. Aus "22" + "33" wird also "2233". Erst nach Umwandeln der Texte in Zahlen über den Aufruf von parseInt() macht + die erwartete Adition.
+Die beiden `parseInt()` sind notwendig, damit Javascript die Werte aus den Eingabefeldern mit + nicht einfach hintereinander hängt, sondern als Zahlen addiert. Eigentlich liefern Eingabefelder nämlich keine Zahlen, sondern Texte. Wendest du auf zwei Texte + an, so werden sie hintereinander gehängt. Aus "22" + "33" wird also "2233". Erst nach Umwandeln der Texte in Zahlen über den Aufruf von parseInt() macht + die erwartete Addition.
 
 Das `return false` in Zeile 16 sagt dem Formular, dass mit dem Ausführen dieser Anweisungen die Behandlung des Abschickens beendet ist. Fehlt diese Zeile, so wird das Ergebnis direkt wieder gelöscht, weil die Seite nach Abschicken des Formulars neu aufgebaut wird.
