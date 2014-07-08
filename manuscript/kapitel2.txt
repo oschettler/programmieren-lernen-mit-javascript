@@ -53,6 +53,13 @@ Wow! Da ist ja einiges dazu gekommen. Der Code des Beispiels liegt bei [jsfiddle
 
 Javascript-Programme können in einem &lt;script&gt;-Block direkt in eine HTML-Datei geschrieben werden. Normalerweise schreibt man &lt;script&gt;-Blöcke *unter* das übrige HTML. Das ist wichtig, damit der Browser das HTML vom Web-Server bereits geladen hat, wenn er das Javascript-Programm ausführt. Wir wollen ja die Eingabefelder auslesen. Das funktioniert nicht, wenn die Seite noch gar nicht vollständig geladen ist.
 
+Unser kleines Javascript-Programm enthält Anweisungen für den Browser und Erklärungen, die nur für dich als menschlicher Leser gedacht sind. Der Browser ignoriert alle Kommentare,
+
+* die in einer Zeile hinter // stehen und
+* die zwischen den Markierungen /* und */ stehen.
+
+Mit solchen Kommentaren kannst du also dir selbst helfen, dein Programm auch in einer Woche noch zu verstehen.
+
 Javascript kann rechnen. Das kannst du direkt ausprobieren, wenn du die Konsole unseres Chrome-Browsers öffnest, entweder über den Menüeintrag Anzeigen / Entwickler / Javascript-Konsole oder über die Tastenkombination ALT-CMD-J:
 
 ![Öffnen der Konsole](images/menu_konsole.png)
@@ -71,15 +78,15 @@ Mit Variablen kannst du auch rechnen:
 
 Unser Programm definiert vier Variable:
 
-* *formular* speichert das HTML-Formular
-* *zahl1* und *zahl2* speichern die Werte aus den Eingabefeldern
-* *ergebnis* speichert den Textbereich für die Ausgabe des Ergebnisses
+* *formular* speichert das HTML-Formular (Zeile 11)
+* *zahl1* und *zahl2* speichern die Werte aus den Eingabefeldern (Zeilen 15, 16)
+* *ergebnis* speichert den Textbereich für die Ausgabe des Ergebnisses (Zeile 17)
 
 Man kann also tatsächlich nicht nur einfache Zahlen oder Texte in Variablen speichern, sondern auch HTML-Elemente. Dazu musst du ihnen einen Namen geben. Das Formular hat z.B. den Namen *aufgabe*:
 
 <<[Formular namens "aufgabe"](code/formular_aufgabe.html)
 
-Der Name wird bei einem Attribut *id* angegeben. Ein ID-Name darf in einem HTML-Dokument nur ein einziges Mal vorkommen. Aus diesem Grund ist es möglich, das Formular über den Aufruf von der Funktion *getElementById()* zu holen und in eine Variable zu schreiben:
+Der Name wird bei einem Attribut *id* angegeben. Ein ID-Name darf in einem HTML-Dokument nur ein einziges Mal vorkommen. Er dient zur *Identifikation* des Elementes. Aus diesem Grund ist es möglich, das Formular über den Aufruf von der Funktion *getElementById()* zu holen und in eine Variable zu schreiben:
 
 <<[Holen des Elementes mit ID "aufgabe" (das Formular)](code/getelementbyid.html)
 
@@ -97,10 +104,10 @@ Die Aktionen, die beim Eintreffen eines Ereignisses ausgeführt werden sollen, s
 
 Diese Anweisung besagt, das beim Absenden des Formulars (on submit) die Anweisungen einer Funktion ausgeführt werden sollen. Der Code innerhalb der geschweiften Klammern wird also erst dann aufgerufen, wenn der Knopf gedrückt wird.
 
-Im Beispiel ist das der Code in den Zeilen 9 .. 16. Die ersten Zeilen hatten wir uns schon angeschaut. Hier werden HTML-Elemente an Variable zugewiesen. In Zeile 14 wird die eigentliche Rechenaufgabe gelöst und das Ergebnis in den Ergebnis-Textbereich geschrieben.
+Im Beispiel ist das der Code in den Zeilen 12 .. 24. Die ersten Zeilen hatten wir uns schon angeschaut. Hier werden HTML-Elemente an Variable zugewiesen. In Zeile 21 wird die eigentliche Rechenaufgabe gelöst und das Ergebnis in den Ergebnis-Textbereich geschrieben.
 
 Interessant hierbei ist, dass du auf den Wert eines Eingabe-Feldes über *.value* und auf einen Textbereich über *.innerHTML* zugegreifen kannst.
 
 Die beiden `parseInt()` sind notwendig, damit Javascript die Werte aus den Eingabefeldern mit + nicht einfach hintereinander hängt, sondern als Zahlen addiert. Eigentlich liefern Eingabefelder nämlich keine Zahlen, sondern Texte. Wendest du auf zwei Texte + an, so werden sie hintereinander gehängt. Aus "22" + "33" wird also "2233". Erst nach Umwandeln der Texte in Zahlen über den Aufruf von parseInt() macht + die erwartete Addition.
 
-Das `return false` in Zeile 16 sagt dem Formular, dass mit dem Ausführen dieser Anweisungen die Behandlung des Abschickens beendet ist. Fehlt diese Zeile, so wird das Ergebnis direkt wieder gelöscht, weil die Seite nach Abschicken des Formulars neu aufgebaut wird.
+Das `return false` in Zeile 24 sagt dem Formular, dass mit dem Ausführen dieser Anweisungen die Behandlung des Abschickens beendet ist. Fehlt diese Zeile, so wird das Ergebnis direkt wieder gelöscht, weil die Seite nach Abschicken des Formulars neu aufgebaut wird.
