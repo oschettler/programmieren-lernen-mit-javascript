@@ -112,9 +112,11 @@ Die beiden `parseInt()` sind notwendig, damit Javascript die Werte aus den Einga
 
 Das `return false` in Zeile 24 sagt dem Formular, dass mit dem Ausführen dieser Anweisungen die Behandlung des Abschickens beendet ist. Fehlt diese Zeile, so wird das Ergebnis direkt wieder gelöscht, weil die Seite nach Abschicken des Formulars neu aufgebaut wird.
 
+An dem Beispiel siehst du auch, dass ein Javascript-Programm aus einzelnen Anweisungen besteht. Anweisungen werden durch ein ; beendet. Manchmal ist es möglich, mehrere Anweisungen in einer zu kombinieren, etwa bei der Auflistung der Variablen mit ihren Anfangswerten hinter var. Die einzelnen Variablen werden dann durch ein Komma getrennt.
+
 ## Werte und Ausdrücke
 
-Lass uns noch ein Wenig mit Werten herumspielen. Javascript kennt Werte von verschiedenen Typen. In der Browser-Konsole hast du oben zwei Zahlen addiert. Es gibt weitere Arten von Werten in Javascript:
+Lass uns noch ein wenig mit Werten herumspielen. Javascript kennt Werte von verschiedenen Typen. In der Browser-Konsole hast du oben zwei Zahlen addiert. Es gibt weitere Arten von Werten in Javascript:
 
 | Typ | Beschreibung | Beispiel |
 |-----|--------------|----------|
@@ -126,4 +128,64 @@ Lass uns noch ein Wenig mit Werten herumspielen. Javascript kennt Werte von vers
 | Feld | Vektor oder Matrix von Werten in [ und ] | [1, 2, "drei", [3, 2]] |
 | Objekt | Sammlung mehrerer benannter Einzelwerte in { und } | { name: "Paul", wohntIn: "Bonn" } |
 | Funktion | Sammlung einzelner Code-Anweisungen mit Platzhaltern | function(a, b) { return a+b; } |  
-Um Werte und Rechenausdrücke mit Werten zu erforschen, kannst du sie in der Konsole des Browsers ausprobieren.
+
+Um Werte und Rechenausdrücke mit Werten zu erforschen, kannst du sie in der Konsole des Browsers ausprobieren. öffne dazu die Konsole in Chrome mit ALT-CMD-J und gib nacheinander folgende Werte ein, jeweils gefolgt von der Eingabetaste:
+
+<<[Werte in der Konsole des Browsers](code/werte.js)
+
+Du siehst also, man kann in Javascript einiges mit Werten anstellen. Neben den Grundrechenarten +, - *, / kennt die Sprache noch viele weitere Operatoren.
+
+### Zuweisung
+
+Das haben wir schon kennengelernt. Links vom Gleichheitszeichen steht eine Variable, rechts ein Wert oder Rechenausdruck. Javascript berechnet zunächst die rechte Seite und weist das Ergebnis dann der Variablen zu. Danach kannst du die Variable an allen Stellen verwenden, wo du auch den Wert verwandt hättest.
+
+### Vergleiche
+
+Vergleiche funktionieren wie Rechnenaufgaben. Das Ergebnis ist dann wahr (true) oder falsch (false).
+
+Beispiele:
+
+<<[Vergleiche](code/vergleiche.js)
+
+### Berechnungen
+
+Die Grundrechenarten haben wir jetzt schon einige Male erwähnt. Javascript kann aber noch mehr.
+
+Beispiele:
+
+<<[Berechnungen](code/berechnungen.js)
+
+## Ablaufkontrolle
+
+Mit dem, was du bisher von Javascript kennst, ist es schon ein ganz ordentlicher Taschenrechner. Richtig nützlich wird ein Programm aber erst, wenn es auf Ereignisse mit Entscheidungen reagieren kann oder wenn es eine Menge von Daten einfach verarbeiten kann. Für diese beiden Aufgaben gibt es in Programmiersprachen spezielle Anweisungen.
+
+Um Entscheidungen zu programmieren, gibt es in Javascript die if- und die switch-Anweisung. Während du mit der if-Anweisung je nach Wahrheitswert entweder den einen oder den anderen Programmzweig durchlaufen kannst, führst du bei der switch-Anweisung abhängig von einem Wert eine ganze Reihe unterschiedlicher Anweisungen aus.
+
+Beispiele:
+
+<<[Entscheidungen](code/entscheidungen.js)
+
+Das `break` in der switch-Anweisung sorgt dafür, das Javascript wirklich nur den jeweiligen Fall bearbeitet und dann die switch-Anweisung beendet. Würde es fehlen und zahl wäre z.B 1, würde zwar zuerst "ein Keks" gesetzt, dann würde Javascript aber zum nächsten case-Zweig "durchfallen" und text auf "viele Kekse" setzen. Ein bisschen komisch, aber so funktioniert es nun einmal.
+
+Für die Verarbeitung von vielen Daten gibt es verschiedene Schleifen in Javascript.
+
+ Beispiele:
+
+<<[Schleifen](code/schleifen.js)
+
+## Funktionen
+
+Neben den Ausdrücken und Anweisungen hat Javascript eine ganze Reihe Funktionen eingebaut. Meist arbeiten Funktionen auf einem oder mehreren Werten von einem bestimmten Typ. Hier sind einige wichtige Beispiele:
+
+| Funktion   | Nutzen                | Typ(en)      | Beispiel           | Ergebnis |
+|------------|-----------------------|--------------|--------------------|----------|
+| parseInt   | wandelt in Ganzzahl   | Zeichenkette | parseInt("10")     | 10       |
+| parseFloat | wandelt in Kommazahl  | Zeichenkette | parseFloat("3.14") | 3.14     |
+| Number     | Test auf Zahl         | beliebig     | Number("14")       | false    |
+| String     | Test auf Zeichenkette | beliebig     | String(12)         | false    |
+
+Neben diesen Funktionen kennt Javascript noch Funktionen, die auf Werten eines bestimmten Typs arbeiten.
+
+Beispiele für Funktionen auf Feldern
+
+<<[Operationen auf Zeichenketten](code/strings.js)
