@@ -173,7 +173,7 @@ Für die Verarbeitung von vielen Daten gibt es verschiedene Schleifen in Javascr
 
 <<[Schleifen](code/schleifen.js)
 
-## Funktionen
+## Eingebaute Funktionen
 
 Neben den Ausdrücken und Anweisungen hat Javascript eine ganze Reihe Funktionen eingebaut. Meist arbeiten Funktionen auf einem oder mehreren Werten von einem bestimmten Typ. Hier sind einige wichtige Beispiele:
 
@@ -188,4 +188,4 @@ Neben diesen Funktionen kennt Javascript noch Funktionen, die auf Werten eines b
 
 Beispiele für Funktionen auf Feldern
 
-<<[Operationen auf Zeichenketten](code/strings.js)
+<<[Funktionen auf Feldern](code/arrays.js)
