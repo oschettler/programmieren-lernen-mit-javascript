@@ -53,9 +53,9 @@ Wow! Da ist ja einiges dazu gekommen. Der Code des Beispiels liegt bei [jsfiddle
 
 Javascript-Programme können in einem &lt;script&gt;-Block direkt in eine HTML-Datei geschrieben werden. Normalerweise schreibt man &lt;script&gt;-Blöcke *unter* das übrige HTML. Das ist wichtig, damit der Browser das HTML vom Web-Server bereits geladen hat, wenn er das Javascript-Programm ausführt. Wir wollen ja die Eingabefelder auslesen. Das funktioniert nicht, wenn die Seite noch gar nicht vollständig geladen ist.
 
-Unser kleines Javascript-Programm enthält Anweisungen für den Browser und Erklärungen, die nur für dich als menschlicher Leser gedacht sind. Der Browser ignoriert alle Kommentare,
+Unser kleines Javascript-Programm enthält Anweisungen für den Browser und Erklärungen, die nur für dich als menschlicher Leser gedacht sind. Der Browser ignoriert alle **Kommentare**
 
-* die in einer Zeile hinter // stehen und
+* hinter // in einer Zeile und
 * die zwischen den Markierungen /* und */ stehen.
 
 Mit solchen Kommentaren kannst du also dir selbst helfen, dein Programm auch in einer Woche noch zu verstehen.
@@ -68,7 +68,7 @@ Gib dann eine einfache Rechenaufgabe ein, z.B. 17 + 19:
 
 ![Rechnen in der Console des Browsers](images/rechnen_konsole.png)
 
-Javascript kann sich Zahlen und andere Dinge, z.B. Texte, in Variablen merken. Den Inhalt einer Variablen bekommst du, indem du ihren Namen schreibst. Hier speichern wir die Zahl 17 in einer Variable mit Namen *zahl1* und holen diese Zahl anschließend wieder zum Vorschein:
+Javascript kann sich Zahlen und andere Dinge, z.B. Texte, in **Variablen** merken. Den Inhalt einer Variablen bekommst du, indem du ihren Namen schreibst. Hier speichern wir die Zahl 17 in einer Variable mit Namen *zahl1* und holen diese Zahl anschließend wieder zum Vorschein:
 
 ![Eine Variable namens "zahl1"](images/zahl1.png)
 
@@ -98,16 +98,32 @@ Wie aber wird gesteuert, dass die Berechnung erst bei Drücken des Knopfes erfol
 
 In Javascript-Programmen kannst du auf Aktionen des Nutzers reagieren, indem du auf Ereignisse reagierst. Wird z.B. ein Formular abgeschickt, so wird ein *submit*-Ereignis ausgelöst.
 
-Die Aktionen, die beim Eintreffen eines Ereignisses ausgeführt werden sollen, schreibst du in eine Funktion. Funktionen sammeln eine Reihe von Anweisungen:
+Die Aktionen, die beim Eintreffen eines Ereignisses ausgeführt werden sollen, schreibst du in eine Funktion. Du wirst später noch einiges mehr über Funktionen lernen. Hier reicht es erst einmal zu verstehen, dass eine Funktion eine Reihe von Anweisungen zu einer neuen Anweisung verbindet:
 
 <<[Eine Funktion](code/erste_funktion.html)
 
-Diese Anweisung besagt, das beim Absenden des Formulars (on submit) die Anweisungen einer Funktion ausgeführt werden sollen. Der Code innerhalb der geschweiften Klammern wird also erst dann aufgerufen, wenn der Knopf gedrückt wird.
+Dieser Code besagt, das beim Absenden des Formulars (on submit) die Anweisungen einer Funktion ausgeführt werden sollen. Der Code innerhalb der geschweiften Klammern wird also erst dann aufgerufen, wenn der Knopf gedrückt wird.
 
 Im Beispiel ist das der Code in den Zeilen 12 .. 24. Die ersten Zeilen hatten wir uns schon angeschaut. Hier werden HTML-Elemente an Variable zugewiesen. In Zeile 21 wird die eigentliche Rechenaufgabe gelöst und das Ergebnis in den Ergebnis-Textbereich geschrieben.
 
-Interessant hierbei ist, dass du auf den Wert eines Eingabe-Feldes über *.value* und auf einen Textbereich über *.innerHTML* zugegreifen kannst.
+Interessant hierbei ist, dass du auf den Wert eines Eingabe-Feldes über `.value` und auf einen Textbereich über `.innerHTML` zugegreifen kannst.
 
 Die beiden `parseInt()` sind notwendig, damit Javascript die Werte aus den Eingabefeldern mit + nicht einfach hintereinander hängt, sondern als Zahlen addiert. Eigentlich liefern Eingabefelder nämlich keine Zahlen, sondern Texte. Wendest du auf zwei Texte + an, so werden sie hintereinander gehängt. Aus "22" + "33" wird also "2233". Erst nach Umwandeln der Texte in Zahlen über den Aufruf von parseInt() macht + die erwartete Addition.
 
 Das `return false` in Zeile 24 sagt dem Formular, dass mit dem Ausführen dieser Anweisungen die Behandlung des Abschickens beendet ist. Fehlt diese Zeile, so wird das Ergebnis direkt wieder gelöscht, weil die Seite nach Abschicken des Formulars neu aufgebaut wird.
+
+## Werte und Ausdrücke
+
+Lass uns noch ein Wenig mit Werten herumspielen. Javascript kennt Werte von verschiedenen Typen. In der Browser-Konsole hast du oben zwei Zahlen addiert. Es gibt weitere Arten von Werten in Javascript:
+
+| Typ | Beschreibung | Beispiel |
+|-----|--------------|----------|
+| ganze Zahl | positive und negative ganze Zahlen ohne Komma | -42, 0, 100 |
+| Kommazahlen | wie ganze Zahlen, aber mit Nachkommastellen. Das Komma wird als Punkt geschrieben | -2.0, 0.0, 3.14 |
+| Text | Kette von Buchstaben und Zeichen in einfachen oder doppelten Anführungsstrichen. Darf nicht über mehrere Zeilen gehen. Anführungsstriche in der Zeichenkette werden mit einem \ markiert | "Hallo Paul", 'Pauls Schwester "Lena"', "3.14" "\"großer\" Bruder" |
+| wahr/falsch | Wahrheitswert | true, false |
+| leer | nicht festgelegter Wert | null |
+| Feld | Vektor oder Matrix von Werten in [ und ] | [1, 2, "drei", [3, 2]] |
+| Objekt | Sammlung mehrerer benannter Einzelwerte in { und } | { name: "Paul", wohntIn: "Bonn" } |
+| Funktion | Sammlung einzelner Code-Anweisungen mit Platzhaltern | function(a, b) { return a+b; } |  
+Um Werte und Rechenausdrücke mit Werten zu erforschen, kannst du sie in der Konsole des Browsers ausprobieren.
