@@ -39,7 +39,7 @@ Im HTML gibt es eine ganze Reihe von nützlichen Tags. Hier sind die Wichtigsten
 | &lt;img>    | Bild                 | &lt;img src="images/rechner.png">                        |
 | &lt;a>      | Link                 | &lt;a href="http://google.de">Google&lt;/a>              |
 
-[SELFHTML](http://de.selfhtml.org/navigation/html.htm) enthält eine umfassende Zusammenfassung der HTML-Tags.
+[SELFHTML](http://de.selfhtml.org/navigation/html.htm) enthält eine umfassende Zusammenfassung der HTML-Tags. Diese Seite arbeitet gerade an einer [umfassenden Modernisierung](http://wiki.selfhtml.org/) in Form eines Wikis.
 
 Für sich genommen macht unser Formular noch nichts. Klickst du auf den Knopf, passiert nichts. Klassisch benötigte man ein Programm auf dem Webserver, um die Daten aus solch einem Formular entgegenzunehmen und zu verarbeiten.
 
@@ -122,10 +122,10 @@ Lass uns noch ein wenig mit Werten herumspielen. Javascript kennt Werte von vers
 |-----|--------------|----------|
 | ganze Zahl | positive und negative ganze Zahlen ohne Komma | -42, 0, 100 |
 | Kommazahlen | wie ganze Zahlen, aber mit Nachkommastellen. Das Komma wird als Punkt geschrieben | -2.0, 0.0, 3.14 |
-| Text | Kette von Buchstaben und Zeichen in einfachen oder doppelten Anführungsstrichen. Darf nicht über mehrere Zeilen gehen. Anführungsstriche in der Zeichenkette werden mit einem \ markiert | "Hallo Paul", 'Pauls Schwester "Lena"', "3.14" "\"großer\" Bruder" |
+| Text | Kette von Buchstaben und Zeichen in einfachen oder doppelten Anführungsstrichen. Darf nicht über mehrere Zeilen gehen. Anführungsstriche in der Zeichenkette (englisch: *String*) werden mit einem \ markiert | "Hallo Paul", 'Pauls Schwester "Lena"', "3.14" "\"großer\" Bruder" |
 | wahr/falsch | Wahrheitswert | true, false |
 | leer | nicht festgelegter Wert | null |
-| Feld | Vektor oder Matrix von Werten in [ und ] | [1, 2, "drei", [3, 2]] |
+| Feld | Vektor oder Matrix von Werten (englisch: *Array*) in [ und ] | [1, 2, "drei", [3, 2]] |
 | Objekt | Sammlung mehrerer benannter Einzelwerte in { und } | { name: "Paul", wohntIn: "Bonn" } |
 | Funktion | Sammlung einzelner Code-Anweisungen mit Platzhaltern | function(a, b) { return a+b; } |  
 
@@ -175,7 +175,7 @@ Für die Verarbeitung von vielen Daten gibt es verschiedene Schleifen in Javascr
 
 ## Eingebaute Funktionen
 
-Neben den Ausdrücken und Anweisungen hat Javascript eine ganze Reihe Funktionen eingebaut. Meist arbeiten Funktionen auf einem oder mehreren Werten von einem bestimmten Typ. Hier sind einige wichtige Beispiele:
+Neben den Ausdrücken und Anweisungen hat Javascript eine ganze Reihe Funktionen eingebaut. Meist arbeiten Funktionen auf einem oder mehreren Werten von einem bestimmten Typ. Diese Werte heissen *Funktionsparameter* und werden in Klammern hinter den Funktionsnamen geschrieben. Hier sind einige wichtige Beispiele:
 
 | Funktion   | Nutzen                | Typ(en)      | Beispiel           | Ergebnis |
 |------------|-----------------------|--------------|--------------------|----------|
@@ -184,8 +184,46 @@ Neben den Ausdrücken und Anweisungen hat Javascript eine ganze Reihe Funktionen
 | Number     | Test auf Zahl         | beliebig     | Number("14")       | false    |
 | String     | Test auf Zeichenkette | beliebig     | String(12)         | false    |
 
-Neben diesen Funktionen kennt Javascript noch Funktionen, die auf Werten eines bestimmten Typs arbeiten.
+Neben diesen Funktionen kennt Javascript noch Eigenschaften und Funktionen, die auf Werten eines bestimmten Typs arbeiten. Anders als die eben gezeigten Funktionen, bei denen die Parameter in Klammern hinter den Funktionsnamen erscheinen, schreibt man die folgenden Funktionen - mit einem Punkt getrennt - hinter den Wert, auf den die Funktion angewandt wird. Weitere Parameter können dann zusätzlich in Klammern hinter den Funktionsnamen geschrieben werden.
 
-Beispiele für Funktionen auf Feldern
+Eine Eigenschaft von Wertefeldern ("Arrays") haben wir schon kennengelernt: `feld.length` gibt die Anzahl der Listenelemente an.
 
-<<[Funktionen auf Feldern](code/arrays.js)
+Es gibt Funktionen auf Feldern, Wahrheitswerten, Daten, Objekten, Zeichenketten und noch viele weitere Funktionen. Stefan Münzer hat auf seiner Website [SELFHTML](http://de.selfhtml.org/javascript/objekte/index.htm) eine umfangreiche Liste zusammengestellt.
+
+Im Zusammenhang mit Zeichenketten gibt es eine Sache, die ich erklären muss:
+
+## Reguläre Ausdrücke
+
+Beim Vergleich von Zeichenketten ist es manchmal nützlich, wenn man nicht mit einem exakten Text, sondern mit einem Textmuster vergleichen kann. Im folgenden Beispiel soll das Adjektiv in jedem der Sätze herausgesucht werden. `console.log()` ist eine nützliche Funktion, um Texte und andere Objekte in der Konsole des Browsers auszugeben.
+
+<<[Reguläre Ausdrücke](code/regex.js)
+
+Zuerst wird ein Feld mit Texten angelegt und dieses dann in der Schleife durchlaufen. Jeder Satz wird dann mit der Funktion `match()` mit einem *regulären Ausdruck* verglichen. Reguläre Ausdrücke werden in Javascript zwischen zwei Schrägstriche / geschrieben. Im Beispiel ist der reguläre Ausdruck `/jede\S?/`. Reguläre Ausdrücke können folgende Elemente enthalten:
+
+| Element | Beispiel  | Beschreibung                                                           |
+|---------|-----------|------------------------------------------------------------------------|
+| 	      | /ich/     | findet "ich", auch als Teil eines Wortes: "ich", "herrlich", "wichtig" |
+| ^       | /^ich/    | "ich" am Anfang eines Textes                                           |
+| $       | /ich$/    | "ich" am Ende eines Textes                                             |
+| *       | /ich*/    | keinmal oder beliebig oft: "ic", "ich", "ichh", "ichhhhh"              |
+| +       | /ich+/    | ein- oder mehrmals: "ich", "ichhhhh"                                   |
+| .       | /.ich/    | beliebiges Zeichen                                                     |
+| .+      | /.+ich/   | ein oder mehrere beliebige Zeichen                                     |
+| \|      | /a\|b/    | Alternative. "a" oder "b"                                              |
+| \b      | /\bich\b/ | Wortgrenze. Findet "ich" als einzelnes Wort                            |
+| \B      | /\Bich\B/ | keine Wortgrenze. Findet "ich" innerhalb von Worten: "wichtig"         |
+| \d      | /\d+/     | eine Ziffer 0 .. 9                                                     |
+| \D      | /\D+/     | keine Ziffer                                                           |
+| \s      | /\s*/     | Weißraum-Zeichen, also Leerzeichen, Tabs und Zeilenwechsel             |
+| \S      | /\S+/     | einzelnes Zeichen, dass kein Leerraum                                  |
+| \w      | /\w+/     | ein alphanumerisches Zeichen oder Unterstrich                          |
+| \W      | /\W/      | ein Zeichen, das nicht alphanumerisch und auch kein Unterstrich ist    |
+| ()      | /(ich)/   | "ich". Diese Stellen werden intern gespeichert                         |
+| /.../g  | /ich/g    | alle Fundstellen von "ich"                                             |
+| /.../i  | /ich/i    | "ich", "Ich", "ICH" ohne Groß-/Kleinschreibung zu beachten             |
+
+Neben `match()` gibt es auch eine Funktion `replace()`, die - basierend auf einem regulären Ausdruck - Ersetzungen in einem Text vornehmen kann. Hier ist ein Beispiel:
+
+ <<[Ersetzen](code/regex_replace.js)
+
+Im Beispiel findet der reguläre Ausdruck `/(rot|grün|blau)(\S*)/` alle Farbadjektive in den Sätzen und ersetzt sie durch das Wort `bunt`. Als Bonus wird noch die Beugung des Adjektives über den geklammerten Ausdruck `(\S*)` berücksichtigt und mit `$2` an *bunt* angehängt. *2* deshalb, weil die zweite Klammer genommen werden soll.
