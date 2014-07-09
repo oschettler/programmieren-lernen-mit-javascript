@@ -194,36 +194,36 @@ Im Zusammenhang mit Zeichenketten gibt es eine Sache, die ich erklären muss:
 
 ## Reguläre Ausdrücke
 
-Beim Vergleich von Zeichenketten ist es manchmal nützlich, wenn man nicht mit einem exakten Text, sondern mit einem Textmuster vergleichen kann. Im folgenden Beispiel soll das Adjektiv in jedem der Sätze herausgesucht werden. `console.log()` ist eine nützliche Funktion, um Texte und andere Objekte in der Konsole des Browsers auszugeben.
+Beim Vergleich von Zeichenketten ist es manchmal nützlich, wenn man nicht mit einem exakten Text, sondern mit einem Textmuster vergleichen kann. Solche Textmuster nennt man in der Informatik [*reguläre Ausdrücke*](http://de.wikipedia.org/wiki/Regul%C3%A4rer_Ausdruck). Im folgenden Beispiel soll das Adjektiv in jedem der Sätze herausgesucht werden. `console.log()` ist dabei eine nützliche Funktion, um Texte und andere Objekte in der Konsole des Browsers auszugeben. Probiere das Beispiel in der Browser-Konsole oder bei [jsfiddle](http://jsfiddle.net/olav/tsjLa/).
 
 <<[Reguläre Ausdrücke](code/regex.js)
 
 Zuerst wird ein Feld mit Texten angelegt und dieses dann in der Schleife durchlaufen. Jeder Satz wird dann mit der Funktion `match()` mit einem *regulären Ausdruck* verglichen. Reguläre Ausdrücke werden in Javascript zwischen zwei Schrägstriche / geschrieben. Im Beispiel ist der reguläre Ausdruck `/jede\S?/`. Reguläre Ausdrücke können folgende Elemente enthalten:
 
-| Element | Beispiel  | Beschreibung                                                           |
-|---------|-----------|------------------------------------------------------------------------|
-| 	      | /ich/     | findet "ich", auch als Teil eines Wortes: "ich", "herrlich", "wichtig" |
-| ^       | /^ich/    | "ich" am Anfang eines Textes                                           |
-| $       | /ich$/    | "ich" am Ende eines Textes                                             |
-| *       | /ich*/    | keinmal oder beliebig oft: "ic", "ich", "ichh", "ichhhhh"              |
-| +       | /ich+/    | ein- oder mehrmals: "ich", "ichhhhh"                                   |
-| .       | /.ich/    | beliebiges Zeichen                                                     |
-| .+      | /.+ich/   | ein oder mehrere beliebige Zeichen                                     |
-| \|      | /a\|b/    | Alternative. "a" oder "b"                                              |
-| \b      | /\bich\b/ | Wortgrenze. Findet "ich" als einzelnes Wort                            |
-| \B      | /\Bich\B/ | keine Wortgrenze. Findet "ich" innerhalb von Worten: "wichtig"         |
-| \d      | /\d+/     | eine Ziffer 0 .. 9                                                     |
-| \D      | /\D+/     | keine Ziffer                                                           |
-| \s      | /\s*/     | Weißraum-Zeichen, also Leerzeichen, Tabs und Zeilenwechsel             |
-| \S      | /\S+/     | einzelnes Zeichen, dass kein Leerraum                                  |
-| \w      | /\w+/     | ein alphanumerisches Zeichen oder Unterstrich                          |
-| \W      | /\W/      | ein Zeichen, das nicht alphanumerisch und auch kein Unterstrich ist    |
-| ()      | /(ich)/   | "ich". Diese Stellen werden intern gespeichert                         |
-| /.../g  | /ich/g    | alle Fundstellen von "ich"                                             |
-| /.../i  | /ich/i    | "ich", "Ich", "ICH" ohne Groß-/Kleinschreibung zu beachten             |
+| Element | Beispiel    | Beschreibung                                                        |
+|---------|-------------|---------------------------------------------------------------------|
+| 	      | /ich/       | "ich", auch als Teil eines Wortes: "ich", "herrlich", "wichtig"     |
+| ^       | /^ich/      | "ich" am Anfang eines Textes                                        |
+| $       | /ich$/      | "ich" am Ende eines Textes                                          |
+| *       | /ich*/      | keinmal oder beliebig oft: "ic", "ich", "ichh", "ichhhhh"           |
+| +       | /ich+/      | ein- oder mehrmals: "ich", "ichhhhh"                                |
+| .       | /.ich/      | beliebiges Zeichen                                                  |
+| .+      | /.+ich/     | ein oder mehrere beliebige Zeichen                                  |
+| \|      | /a\|b/      | Alternative. "a" oder "b"                                           |
+| \b      | /\bich\b/   | Wortgrenze. Findet "ich" als einzelnes Wort                         |
+| \\B     | /\\Bich|\B/ | keine Wortgrenze. Findet "ich" innerhalb von Worten: "wichtig"      |
+| \d      | /\d+/       | eine Ziffer 0 .. 9                                                  |
+| \\D     | /\\D+/      | keine Ziffer                                                        |
+| \s      | /\s*/       | Weißraum-Zeichen, also Leerzeichen, Tabs und Zeilenwechsel          |
+| \\S     | /\\S+/      | einzelnes Zeichen, dass kein Leerraum                               |
+| \w      | /\w+/       | ein alphanumerisches Zeichen oder Unterstrich                       |
+| \\W     | /\\W/       | ein Zeichen, das nicht alphanumerisch und auch kein Unterstrich ist |
+| (...)   | /(ich)/     | "ich". Diese Stellen werden intern gespeichert                      |
+| /.../g  | /ich/g      | alle Fundstellen von "ich"                                          |
+| /.../i  | /ich/i      | "ich", "Ich", "ICH" ohne Groß-/Kleinschreibung zu beachten          |
 
 Neben `match()` gibt es auch eine Funktion `replace()`, die - basierend auf einem regulären Ausdruck - Ersetzungen in einem Text vornehmen kann. Hier ist ein Beispiel:
 
- <<[Ersetzen](code/regex_replace.js)
+ <<[Ersetzen mit regulären Ausdrücken](code/regex_replace.js)
 
-Im Beispiel findet der reguläre Ausdruck `/(rot|grün|blau)(\S*)/` alle Farbadjektive in den Sätzen und ersetzt sie durch das Wort `bunt`. Als Bonus wird noch die Beugung des Adjektives über den geklammerten Ausdruck `(\S*)` berücksichtigt und mit `$2` an *bunt* angehängt. *2* deshalb, weil die zweite Klammer genommen werden soll.
+Wie die bisherigen kannst du auch dieses Beispiel in der Browser-Konsole oder bei [jsfiddle](http://jsfiddle.net/olav/CuhE6/) ausprobieren Im Beispiel findet der reguläre Ausdruck `/(rot|grün|blau)(\S*)/` alle Farbadjektive in den Sätzen und ersetzt sie durch das Wort *bunt*. Als Bonus wird noch die Beugung des Adjektives über den geklammerten Ausdruck `(\S*)` berücksichtigt und mit `$2` an *bunt* angehängt. *2* deshalb, weil die zweite Klammer genommen werden soll.

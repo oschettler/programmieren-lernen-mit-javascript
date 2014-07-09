@@ -1,5 +1,4 @@
 frontmatter:
-acknowledgments.txt
 mainmatter:
 kapitel1.txt
 kapitel2.txt
