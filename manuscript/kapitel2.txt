@@ -169,7 +169,7 @@ Das `break` in der switch-Anweisung sorgt dafür, das Javascript wirklich nur de
 
 Für die Verarbeitung von vielen Daten gibt es verschiedene Schleifen in Javascript.
 
- Beispiele:
+Beispiele:
 
 <<[Schleifen](code/schleifen.js)
 
@@ -227,3 +227,23 @@ Neben `match()` gibt es auch eine Funktion `replace()`, die - basierend auf eine
  <<[Ersetzen mit regulären Ausdrücken](code/regex_replace.js)
 
 Wie die bisherigen kannst du auch dieses Beispiel in der Browser-Konsole oder bei [jsfiddle](http://jsfiddle.net/olav/CuhE6/) ausprobieren Im Beispiel findet der reguläre Ausdruck `/(rot|grün|blau)(\S*)/` alle Farbadjektive in den Sätzen und ersetzt sie durch das Wort *bunt*. Als Bonus wird noch die Beugung des Adjektives über den geklammerten Ausdruck `(\S*)` berücksichtigt und mit `$2` an *bunt* angehängt. *2* deshalb, weil die zweite Klammer genommen werden soll.
+
+## Eigene Funktionen
+
+Bisher funktionierten unsere Programme immer von oben nach unten. Aber bereits unser allererstes Beispiel benutzte eine Funktion, um auf den den Knopfdruck zu reagieren. Funktionen bündeln Anweisungen. Diese Anweisungen kann Variable enthalten, die von aussen als Parameter an die Funktion übergeben werden. Diese Variable heissen Funktionsparameter. In der Definition der Funktion sind es die *formalen* Parameter, die dann beim Aufruf der Funktion mit den *aktuellen* Parametern gefüllt werden. Hier sind ein paar Beispiele für Funktionen:
+
+<<[Funktionen](code/funktionen.js)
+
+Eine interessante Eigenart der Werttypen *String* oder *Number* in Javascript ist, dass sie eigentlich Objekte mit Eigenschaften sind. Eine Eigenschaft is `.prototype`, die Liste der Funktionen auf Objekten dieses Typs. Über `.prototype` lassen sich neue Funktionen für Strings oder Zahlen definieren:
+
+<<[Neue Funktionen für Zeichenketten](code/string_funktionen.js)
+
+Das Coole ist: So etwas funktioniert auch mit eigenen Funktionen (ausprobieren in der Browser-Konsole oder als [jsfiddle](http://jsfiddle.net/olav/bHzDB/)):
+
+<<[Eigene Funktionen als Objekte](code/objekt_funktionen.js)
+
+Hier wird zunächst eine Funktion `Rechteck` definiert. In der Funktion werden die beiden Parameter `breite` und `hoehe` als Eigenschaften der Funktion selbst (*this*) gesetzt.
+
+Dann wird dieser Funktion (oder diesem Objekt, was `Rechteck` jetzt im Grunde darstellt) eine Funktion `umfang()` zugewiesen. Als nächstes wird mit dem `new`-Operator ein neues, leeres Objekt erzeugt. `new Rechteck()` ruft dabei `Rechteck` auf diesem leeren Objekt auf und verbindet gleichzeitig das neue Objekt mit den Eigenschaften von `Rechteck`. Wann immer jetzt eine Eigenschaft des neuen Objektes aufgerufen wird und dieses diese Eigenschaft nicht selber besitzt, sucht Javascript die geforderte Eigenschaft im Prototype von `Rechteck`. So kommt es, dass bei `form.umfang()` die Funktion `Rechteck.prototype.umfang()` aufgerufen wird.
+
+Mit dieser Mechanik können also neue Wertetypen (sogenannte *Klassen*) angelegt und mit Funktionen um eigenes Verhalten ergänzt werden.       
