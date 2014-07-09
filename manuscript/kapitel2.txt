@@ -238,7 +238,7 @@ Eine interessante Eigenart der Werttypen *String* oder *Number* in Javascript is
 
 <<[Neue Funktionen für Zeichenketten](code/string_funktionen.js)
 
-Das Coole ist: So etwas funktioniert auch mit eigenen Funktionen (ausprobieren in der Browser-Konsole oder als [jsfiddle](http://jsfiddle.net/olav/bHzDB/)):
+Das Coole ist: So etwas funktioniert auch mit eigenen Funktionen - ausprobieren in der Browser-Konsole oder als [jsfiddle](http://jsfiddle.net/olav/bHzDB/):
 
 <<[Eigene Funktionen als Objekte](code/objekt_funktionen.js)
 
@@ -246,4 +246,4 @@ Hier wird zunächst eine Funktion `Rechteck` definiert. In der Funktion werden d
 
 Dann wird dieser Funktion (oder diesem Objekt, was `Rechteck` jetzt im Grunde darstellt) eine Funktion `umfang()` zugewiesen. Als nächstes wird mit dem `new`-Operator ein neues, leeres Objekt erzeugt. `new Rechteck()` ruft dabei `Rechteck` auf diesem leeren Objekt auf und verbindet gleichzeitig das neue Objekt mit den Eigenschaften von `Rechteck`. Wann immer jetzt eine Eigenschaft des neuen Objektes aufgerufen wird und dieses diese Eigenschaft nicht selber besitzt, sucht Javascript die geforderte Eigenschaft im Prototype von `Rechteck`. So kommt es, dass bei `form.umfang()` die Funktion `Rechteck.prototype.umfang()` aufgerufen wird.
 
-Mit dieser Mechanik können also neue Wertetypen (sogenannte *Klassen*) angelegt und mit Funktionen um eigenes Verhalten ergänzt werden.       
+Mit dieser Mechanik können also neue Wertetypen (sogenannte *Klassen*) angelegt und mit Funktionen um eigenes Verhalten ergänzt werden.
