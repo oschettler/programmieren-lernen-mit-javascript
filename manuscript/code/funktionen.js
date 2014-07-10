@@ -33,3 +33,16 @@ function ende(text)
 }
 
 ende("Abitur"); // "r"
+
+// Rekrusiv: Summe aller natürlichen Zahlen bis n
+function sum(n)
+{
+    if (n > 0) {
+        return n + sum(n - 1);
+    }
+    else {
+        return 0;
+    }
+}
+
+sum(5); // 5+4+3+2+1 = 15

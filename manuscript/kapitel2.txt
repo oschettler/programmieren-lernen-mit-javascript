@@ -230,9 +230,11 @@ Wie die bisherigen kannst du auch dieses Beispiel in der Browser-Konsole oder be
 
 ## Eigene Funktionen
 
-Bisher funktionierten unsere Programme immer von oben nach unten. Aber bereits unser allererstes Beispiel benutzte eine Funktion, um auf den den Knopfdruck zu reagieren. Funktionen bündeln Anweisungen. Diese Anweisungen kann Variable enthalten, die von aussen als Parameter an die Funktion übergeben werden. Diese Variable heissen Funktionsparameter. In der Definition der Funktion sind es die *formalen* Parameter, die dann beim Aufruf der Funktion mit den *aktuellen* Parametern gefüllt werden. Hier sind ein paar Beispiele für Funktionen:
+Bisher funktionierten unsere Programme immer von oben nach unten. Aber bereits unser allererstes Beispiel benutzte eine Funktion, um auf den den Knopfdruck zu reagieren. Funktionen bündeln Anweisungen. Diese Anweisungen kann Variable enthalten, die von aussen an die Funktion übergeben werden. Diese Variable heissen Funktionsparameter. In der Definition der Funktion sind es die *formalen* Parameter, die dann beim Aufruf der Funktion mit den *aktuellen* Parametern gefüllt werden. Hier sind ein paar Beispiele für Funktionen und Funktionsaufrufe:
 
 <<[Funktionen](code/funktionen.js)
+
+Das letzte Beispiel ist interessanr, weil sich hier die Funktion `sum()` selber aufruft. Das kann natürlich nur dann gut gehen, wenn es eine Abbruchbedingung (in diesem Fall n > 0) gibt.
 
 Eine interessante Eigenart der Werttypen *String* oder *Number* in Javascript ist, dass sie eigentlich Objekte mit Eigenschaften sind. Eine Eigenschaft is `.prototype`, die Liste der Funktionen auf Objekten dieses Typs. Über `.prototype` lassen sich neue Funktionen für Strings oder Zahlen definieren:
 
@@ -244,6 +246,6 @@ Das Coole ist: So etwas funktioniert auch mit eigenen Funktionen - ausprobieren 
 
 Hier wird zunächst eine Funktion `Rechteck` definiert. In der Funktion werden die beiden Parameter `breite` und `hoehe` als Eigenschaften der Funktion selbst (*this*) gesetzt.
 
-Dann wird dieser Funktion (oder diesem Objekt, was `Rechteck` jetzt im Grunde darstellt) eine Funktion `umfang()` zugewiesen. Als nächstes wird mit dem `new`-Operator ein neues, leeres Objekt erzeugt. `new Rechteck()` ruft dabei `Rechteck` auf diesem leeren Objekt auf und verbindet gleichzeitig das neue Objekt mit den Eigenschaften von `Rechteck`. Wann immer jetzt eine Eigenschaft des neuen Objektes aufgerufen wird und dieses diese Eigenschaft nicht selber besitzt, sucht Javascript die geforderte Eigenschaft im Prototype von `Rechteck`. So kommt es, dass bei `form.umfang()` die Funktion `Rechteck.prototype.umfang()` aufgerufen wird.
+Dann wird dieser Funktion (oder diesem Objekt, was `Rechteck` jetzt im Grunde darstellt) eine Funktion `umfang()` zugewiesen. Als nächstes wird mit dem `new`-Operator ein neues, leeres Objekt erzeugt. `new Rechteck()` ruft dabei `Rechteck` auf diesem leeren Objekt auf und verbindet gleichzeitig das neue Objekt mit den Eigenschaften von `Rechteck`. Wann immer jetzt eine Eigenschaft des neuen Objektes aufgerufen wird und dieses diese Eigenschaft nicht selber besitzt, sucht Javascript die geforderte Eigenschaft bei `Rechteck`. So kommt es, dass bei `form.umfang()` die Funktion `Rechteck.prototype.umfang()` aufgerufen wird.
 
 Mit dieser Mechanik können also neue Wertetypen (sogenannte *Klassen*) angelegt und mit Funktionen um eigenes Verhalten ergänzt werden.
