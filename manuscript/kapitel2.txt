@@ -6,17 +6,17 @@ In diesem Kapitel wollen wir unsere ersten Experimente mit Javascript machen.
 
 Die Programmiersprache Javascript gehörte nicht von Anfang an zum World Wide Web. Sie wurde vielmehr erst 1995 von Brendan Eich, einem Programmierer beim damaligen Browser-Hersteller Netscape, [entwickelt](http://de.wikipedia.org/wiki/JavaScript). Javascript war anfangs nur zur Ausführung in Browsern gedacht. Heute läuft es aber auch auf Webservern. Es gibt sogar inzwischen kleine Minicomputer, die direkt Javascript-Programme ausführen können ([Espruino](http://www.espruino.com/), [Tessel](https://tessel.io/)).
 
-Bereits von Anfang an jedoch waren Formulare Teil von HTML. Mit Formularen können Web-Seiten Daten entgegennehmen. Hier ist eine Web-Seite mit einem einfachen Formular ([Einfaches Formular](http://jsfiddle.net/olav/Ngvd4/)):
+Bereits von Anfang an jedoch waren Formulare Teil von HTML. Mit Formularen können Web-Seiten Daten entgegennehmen. Hier ist eine Web-Seite mit einem ([einfachen Formular](http://jsfiddle.net/olav/Ngvd4/)):
 
 <<[Web-Seite mit einfachem Formular](code/rechner.html)
 
-Der Web-Dienst http://jsfiddle.net/ erlaubt es uns, kleine Beispiele auf dem Computer des Dienstes abzulegen. Du kannst aber das Beispiel auch in einem Text-Editor (Lade dir z.B. [Atom](https://atom.io/) herunter; es ist ein guter und kostenloser Editor) eingeben und als Datei rechner.html auf deinem Compute speichern. Wenn du dann im Finder/Explorer die Datei durch Doppelklick öffnest, zeigt der Browser dir das Formular an:
+Der Web-Dienst http://jsfiddle.net/ erlaubt es uns, kleine Beispiele auf dem Computer des Dienstes abzulegen. Du kannst aber das Beispiel auch in einem Text-Editor (Lade dir z.B. [Atom](https://atom.io/) herunter; es ist ein guter und kostenloser Editor) eingeben und als Datei rechner.html auf deinem Computer speichern. Wenn du dann im Finder/Explorer die Datei durch Doppelklick öffnest, zeigt der Browser dir das Formular an:
 
 ![Einfaches Formular](images/rechner.png)
 
-Dieses Formular enthält den üblichen Rahmen einer HTML-Seite, darin das Element &lt;form> ... &lt;/form>, darin zwei Eingabe-Elemente und ein Element für das Ergebnis. Elemente in HTML, die sogenannten Tags, werden mit spitzen Klammern eingeschlossen. Der Browser kann sie so vom normalen Text der Web-Seite unterscheiden. Alles, was in spitzen Klammern steht, ist also ein Tag.
+Dieses Formular enthält den üblichen Rahmen einer HTML-Seite, darin das Element &lt;form> ... &lt;/form>, darin zwei Eingabe-Elemente und ein Element für das Ergebnis. Elemente in HTML, die sogenannten Tags, werden in spitze Klammern eingeschlossen. Der Browser kann sie so vom normalen Text der Web-Seite unterscheiden. Alles, was in spitzen Klammern steht, ist also ein Tag.
 
-Tags können in Paaren (als sog. Block) oder einzeln auftreten: &lt;html> ... &lt;/html>, &lt;form> ... &lt;/form> und &lt;span> ... &lt;/span> sind Blöcke, &lt;input> ist ein Einzelelement. Ein Tag ist immer gleich aufgebaut:
+Tags können in Paaren (als so genannter Block) oder einzeln auftreten: &lt;html> ... &lt;/html>, &lt;form> ... &lt;/form> und &lt;span> ... &lt;/span> sind Blöcke, &lt;input> ist ein Einzelelement. Ein Tag ist immer gleich aufgebaut:
 
 * &lt;
 * Name des Tags, z.B. html, form oder input. Es spielt dabei keine Rolle, ob der Tag-Name groß oder klein geschrieben wird. Für den Browser ist &lt;html> dasselbe wie &lt;HTML>.
@@ -33,25 +33,25 @@ Im HTML gibt es eine ganze Reihe von nützlichen Tags. Hier sind die Wichtigsten
 | &lt;h2>     | Mittlere Überschrift | &lt;h2>Erster Abschnitt&lt;/h2>                          |
 | &lt;h3>     | Kleine Überschrift   | &lt;h3>Artikel Eins&lt;/h3>                              |
 | &lt;p>      | Absatz ("Paragraph") | &lt;p>Dieses Formular ...&lt;/p>                         |
-| &lt;ul>     | Liste                | &lt;ul>&lt;li>heute&lt;/li>&lt;li>morgen&lt;/li>&lt;/ul> |
-| &lt;ol>     | Nummerierte Liste    | &lt;ol>&lt;li>eins&lt;/li>&lt;li>zwei&lt;/li>&lt;/ul>    |
+| &lt;ul>, &ltli> | Liste            | &lt;ul>&lt;li>heute&lt;/li>&lt;li>morgen&lt;/li>&lt;/ul> |
+| &lt;ol>, &ltli> | Nummerierte Liste | &lt;ol>&lt;li>eins&lt;/li>&lt;li>zwei&lt;/li>&lt;/ul>    |
 | &lt;span>   | Textbereich          | Ergebnis: &lt;span>0&lt;/span>                           |
 | &lt;img>    | Bild                 | &lt;img src="images/rechner.png">                        |
 | &lt;a>      | Link                 | &lt;a href="http://google.de">Google&lt;/a>              |
 
-[SELFHTML](http://de.selfhtml.org/navigation/html.htm) enthält eine umfassende Zusammenfassung der HTML-Tags. Diese Seite arbeitet gerade an einer [umfassenden Modernisierung](http://wiki.selfhtml.org/) in Form eines Wikis.
+[SELFHTML](http://de.selfhtml.org/navigation/html.htm) enthält eine umfassende Zusammenfassung der HTML-Tags.
 
-Für sich genommen macht unser Formular noch nichts. Klickst du auf den Knopf, passiert nichts. Klassisch benötigte man ein Programm auf dem Webserver, um die Daten aus solch einem Formular entgegenzunehmen und zu verarbeiten.
+Für sich genommen macht unser Formular noch nichts. Klickst du auf den Knopf, passiert erst einmal gar nichts. Klassisch benötigt man ein Programm auf dem Webserver, um die Daten aus solch einem Formular entgegenzunehmen und zu verarbeiten.
 
 Dasselbe geht aber auch mit Javascript. Ergänze unsere HTML-Seite folgendermaßen:
 
 <<[Web-Seite mit einfachem Formular](code/rechner_js.html)
 
-Wow! Da ist ja einiges dazu gekommen. Der Code des Beispiels liegt bei [jsfiddle](http://jsfiddle.net/olav/ER6C4/). Neben unserem Formular gibt es jetzt noch einen &lt;script> ... &lt;/script>-Block mit meinem Javascript-Programm. Dieses Programm liest die beiden Zahlen aus den Eingabefeldern und gibt ihre Summe aus, wenn du auf den Knopf drückst. Aber langsam ...
+Wow! Da ist ja einiges dazu gekommen. Der Code des Beispiels liegt bei [jsfiddle](http://jsfiddle.net/olav/ER6C4/). Neben unserem Formular gibt es jetzt noch einen &lt;script> ... &lt;/script>-Block mit deinem Javascript-Programm. Dieses Programm liest die beiden Zahlen aus den Eingabefeldern und gibt ihre Summe aus, wenn du auf den Knopf drückst. Aber langsam ...
 
 ## Elemente eines Javascript-Programmes
 
-Javascript-Programme können in einem &lt;script&gt;-Block direkt in eine HTML-Datei geschrieben werden. Normalerweise schreibt man &lt;script&gt;-Blöcke *unter* das übrige HTML. Das ist wichtig, damit der Browser das HTML vom Web-Server bereits geladen hat, wenn er das Javascript-Programm ausführt. Wir wollen ja die Eingabefelder auslesen. Das funktioniert nicht, wenn die Seite noch gar nicht vollständig geladen ist.
+Javascript-Programme können in einem &lt;script&gt;-Block direkt in eine HTML-Datei geschrieben werden. Normalerweise schreibt man &lt;script&gt;-Blöcke *unter* das übrige HTML. Das ist wichtig, damit der Browser das HTML vom Web-Server bereits geladen hat, wenn er das Javascript-Programm ausführt. Wir wollen ja die Eingabefelder auslesen. Das funktioniert nicht, wenn die Seite noch gar nicht vollständig im Browser angekommen ist.
 
 Unser kleines Javascript-Programm enthält Anweisungen für den Browser und Erklärungen, die nur für dich als menschlicher Leser gedacht sind. Der Browser ignoriert alle **Kommentare**
 
@@ -60,7 +60,7 @@ Unser kleines Javascript-Programm enthält Anweisungen für den Browser und Erkl
 
 Mit solchen Kommentaren kannst du also dir selbst helfen, dein Programm auch in einer Woche noch zu verstehen.
 
-Javascript kann rechnen. Das kannst du direkt ausprobieren, wenn du die Konsole unseres Chrome-Browsers öffnest, entweder über den Menüeintrag Anzeigen / Entwickler / Javascript-Konsole oder über die Tastenkombination ALT-CMD-J:
+Javascript kann rechnen. Das kannst du direkt ausprobieren, wenn du die Konsole deines Chrome-Browsers öffnest, entweder über den Menüeintrag Anzeigen / Entwickler / Javascript-Konsole oder über die Tastenkombination ALT-CMD-J:
 
 ![Öffnen der Konsole](images/menu_konsole.png)
 
@@ -90,7 +90,7 @@ Der Name wird bei einem Attribut *id* angegeben. Ein ID-Name darf in einem HTML-
 
 <<[Holen des Elementes mit ID "aufgabe" (das Formular)](code/getelementbyid.html)
 
-Auch die beiden Eingabeelemente `&lt;input id="zahl1">`, `&lt;input id="zahl2">` und der Textbereich für das Ergebnis `&lt;span id="ergebnis"></span>` werden auf diese Weise Variablen zugewiesen.
+Auch die beiden Eingabeelemente `<input id="zahl1">`, `<input id="zahl2">` und der Textbereich für das Ergebnis `<span id="ergebnis"></span>` werden auf diese Weise Variablen zugewiesen.
 
 ## Ereignisse
 
@@ -102,7 +102,7 @@ Die Aktionen, die beim Eintreffen eines Ereignisses ausgeführt werden sollen, s
 
 <<[Eine Funktion](code/erste_funktion.html)
 
-Dieser Code besagt, das beim Absenden des Formulars (on submit) die Anweisungen einer Funktion ausgeführt werden sollen. Der Code innerhalb der geschweiften Klammern wird also erst dann aufgerufen, wenn der Knopf gedrückt wird.
+Dieser Code besagt, das beim Absenden des Formulars (Englisch "on submit") die Anweisungen einer Funktion ausgeführt werden sollen. Der Code innerhalb der geschweiften Klammern wird also erst dann aufgerufen, wenn der Knopf gedrückt wird.
 
 Im Beispiel ist das der Code in den Zeilen 12 .. 24. Die ersten Zeilen hatten wir uns schon angeschaut. Hier werden HTML-Elemente an Variable zugewiesen. In Zeile 21 wird die eigentliche Rechenaufgabe gelöst und das Ergebnis in den Ergebnis-Textbereich geschrieben.
 
@@ -184,7 +184,7 @@ Neben den Ausdrücken und Anweisungen hat Javascript eine ganze Reihe Funktionen
 | Number     | Test auf Zahl         | beliebig     | Number("14")       | false    |
 | String     | Test auf Zeichenkette | beliebig     | String(12)         | false    |
 
-Neben diesen Funktionen kennt Javascript noch Eigenschaften und Funktionen, die auf Werten eines bestimmten Typs arbeiten. Anders als die eben gezeigten Funktionen, bei denen die Parameter in Klammern hinter den Funktionsnamen erscheinen, schreibt man die folgenden Funktionen - mit einem Punkt getrennt - hinter den Wert, auf den die Funktion angewandt wird. Weitere Parameter können dann zusätzlich in Klammern hinter den Funktionsnamen geschrieben werden.
+Ausser diesen Funktionen kennt Javascript noch Eigenschaften und Funktionen, die auf Werten eines bestimmten Typs arbeiten. Anders als die eben gezeigten Funktionen, bei denen die Parameter in Klammern hinter den Funktionsnamen erscheinen, schreibt man die folgenden Funktionen - mit einem Punkt getrennt - hinter den Wert, auf den die Funktion angewandt wird. Weitere Parameter können dann zusätzlich in Klammern hinter den Funktionsnamen geschrieben werden.
 
 Eine Eigenschaft von Wertefeldern ("Arrays") haben wir schon kennengelernt: `feld.length` gibt die Anzahl der Listenelemente an.
 
@@ -226,17 +226,17 @@ Neben `match()` gibt es auch eine Funktion `replace()`, die - basierend auf eine
 
  <<[Ersetzen mit regulären Ausdrücken](code/regex_replace.js)
 
-Wie die bisherigen kannst du auch dieses Beispiel in der Browser-Konsole oder bei [jsfiddle](http://jsfiddle.net/olav/CuhE6/) ausprobieren Im Beispiel findet der reguläre Ausdruck `/(rot|grün|blau)(\S*)/` alle Farbadjektive in den Sätzen und ersetzt sie durch das Wort *bunt*. Als Bonus wird noch die Beugung des Adjektives über den geklammerten Ausdruck `(\S*)` berücksichtigt und mit `$2` an *bunt* angehängt. *2* deshalb, weil die zweite Klammer genommen werden soll.
+Wie die bisherigen kannst du auch dieses Beispiel in der Browser-Konsole oder bei [jsfiddle](http://jsfiddle.net/olav/CuhE6/) ausprobieren. Im Beispiel findet der reguläre Ausdruck `/(rot|grün|blau)(\S*)/` alle Farbadjektive in den Sätzen und ersetzt sie durch das Wort *bunt*. Als Bonus wird noch die Beugung des Adjektives über den geklammerten Ausdruck `(\S*)` berücksichtigt und mit `$2` an *bunt* angehängt. *2* deshalb, weil die zweite Klammer genommen werden soll.
 
 ## Eigene Funktionen
 
-Bisher funktionierten unsere Programme immer von oben nach unten. Aber bereits unser allererstes Beispiel benutzte eine Funktion, um auf den den Knopfdruck zu reagieren. Funktionen bündeln Anweisungen. Diese Anweisungen kann Variable enthalten, die von aussen an die Funktion übergeben werden. Diese Variable heissen Funktionsparameter. In der Definition der Funktion sind es die *formalen* Parameter, die dann beim Aufruf der Funktion mit den *aktuellen* Parametern gefüllt werden. Hier sind ein paar Beispiele für Funktionen und Funktionsaufrufe:
+Bisher funktionierten unsere Programme immer von oben nach unten. Aber bereits unser allererstes Beispiel benutzte eine Funktion, um auf den Knopfdruck zu reagieren. Funktionen bündeln Anweisungen. Diese Anweisungen können Variable enthalten, die von aussen an die Funktion übergeben werden. Diese Variable heissen Funktionsparameter. In der Definition der Funktion sind es die *formalen* Parameter, die dann beim Aufruf der Funktion mit den *aktuellen* Parametern gefüllt werden. Hier sind ein paar Beispiele für Funktionen und Funktionsaufrufe:
 
 <<[Funktionen](code/funktionen.js)
 
-Das letzte Beispiel ist interessanr, weil sich hier die Funktion `sum()` selber aufruft. Das kann natürlich nur dann gut gehen, wenn es eine Abbruchbedingung (in diesem Fall n > 0) gibt.
+Das letzte Beispiel ist interessant, weil sich hier die Funktion `sum()` selber aufruft. Das kann natürlich nur dann gut gehen, wenn es eine Abbruchbedingung (in diesem Fall n > 0) gibt.
 
-Eine interessante Eigenart der Werttypen *String* oder *Number* in Javascript ist, dass sie eigentlich Objekte mit Eigenschaften sind. Eine Eigenschaft is `.prototype`, die Liste der Funktionen auf Objekten dieses Typs. Über `.prototype` lassen sich neue Funktionen für Strings oder Zahlen definieren:
+Eine interessante Eigenart der Werttypen *String* oder *Number* in Javascript ist, dass sie eigentlich Objekte mit Eigenschaften sind. Eine Eigenschaft ist `.prototype`, die Liste der Funktionen auf Objekten dieses Typs. Über `.prototype` lassen sich neue Funktionen für Strings oder Zahlen definieren:
 
 <<[Neue Funktionen für Zeichenketten](code/string_funktionen.js)
 
