@@ -249,3 +249,5 @@ Hier wird zunächst eine Funktion `Rechteck` definiert. In der Funktion werden d
 Dann wird dieser Funktion (oder diesem Objekt, was `Rechteck` jetzt im Grunde darstellt) eine Funktion `umfang()` zugewiesen. Als nächstes wird mit dem `new`-Operator ein neues, leeres Objekt erzeugt. `new Rechteck()` ruft dabei `Rechteck` auf diesem leeren Objekt auf und verbindet gleichzeitig das neue Objekt mit den Eigenschaften von `Rechteck`. Wann immer jetzt eine Eigenschaft des neuen Objektes aufgerufen wird und dieses diese Eigenschaft nicht selber besitzt, sucht Javascript die geforderte Eigenschaft bei `Rechteck`. So kommt es, dass bei `form.umfang()` die Funktion `Rechteck.prototype.umfang()` aufgerufen wird.
 
 Mit dieser Mechanik können also neue Wertetypen (sogenannte *Klassen*) angelegt und mit Funktionen um eigenes Verhalten ergänzt werden.
+
+So, geschafft! Du hast jetzt genug Javascript kennengelernt, um in nächsten Kapitel die ersten Schritte zu einem kompletten Spiel zu machen. 

@@ -1,0 +1,89 @@
+# 3 - Eine öffentliche Webseite
+
+Bisher haben wir uns damit begnügt, kleine Beispiele in jsfiddle oder einfach in der Konsole des Browsers auszuprobieren. Wenn wir jetzt ein erstes Spiel schreiben wollen, brauchst du aber einen Weg, um eine Seite im WWW zu veröffentlichen.
+
+Es gibt dazu eine ganze Menge Möglichkeiten. Die wahrscheinlich einfachste Variante funktioniert mit [Dropbox](https://www.dropbox.com/). Dropbox ist eine Firma, die dir kostenlos 5 GByte Speicherplatz _in der Cloud_ zur Verfügung stellt. Du benutzt Dropbox über einen besonderen Ordner auf deinem Computer. Alle Dateien, die du in diesen Ordner legst, werden automatisch auf die Dropbox-Server übertragen. Von dort sind sie auch auf all deinen anderen Geräten (andere Computer, Tablets, Handys) erreichbar.
+
+Das ist an sich schon sehr nützlich. Du kannst auch Ordner für deine Freunde freigeben und so Dateien (Fotos, Hausaufgaben usw.) mit ihnen austauschen. In jedem angeschlossenen Gerät tauchen automatisch neue und geänderte Dateien auf.
+
+Für unsere Webseite wollen wir ausnutzen, dass du mit Dropbox auch Dateien frei im Internet veröffentlichen kannst. Die Adresse dieser Dateien ist zwar nicht sehr hübsch (z.B. https://dl.dropboxusercontent.com/s/zii4gpgte0nc6l5/index.html), aber Dropbox ist wirklich das einfachste Verfahren, Dateien ins Netz zu stellen. Für hübschere Adressen gibt es auch Dienste wie z.B. [Bitly](https://bitly.com/). Dort habe ich die Adresse [l.olav.net/erste-seite](http://l.olav.net/erste-seite) für den hässlichen Link gesichert. Bitly richtet dann eine Weiterleitung auf die Seite unter dl.dropboxusercontent.com ein.
+
+Wenn du wirklich einmal eine komplette eigene Website erstellen willst, etwa zur Vermarktung deines ersten Spieles oder zum Aufbau einer Online-Community, schau dir einmal die Provider [Uberspace]() oder [Hetzner](http://www.hetzner.de/) an. Beide sind zwar nicht umsonst, bieten aber sehr viel fürs Geld und haben einen super Service.
+
+Aber zurück zu Dropbox. Wenn du noch kein Dropbox-Nutzer bist, musst du dich zunächst auf deren Website registrieren und das Dropbox-Programm installieren. Hast du bereits ein Dropbox-Konto, kannst du bei Schritt 8 einsteigen.
+
+![Schritt 1 - Bei Dropbox anmelden](images/dropbox-01.png)
+
+Im zweiten Schritt füllst du die Registrierung aus:
+
+![Schritt 2 - Registrierung ausfüllen](images/dropbox-02.png)
+
+... wählst das kostenlose Angebot:
+
+![Schritt 3 - kostenloses ANgebot wählen](images/dropbox-03.png)
+
+... und startest die Installation durch Klick auf die heruntergeladene Datei:
+
+![Schritt 4 - Installation starten](images/dropbox-04.png)
+
+Den Warnhinweis kannst du ignorieren:
+
+![Schritt 5 - Warnhinweis bestätigen](images/dropbox-05.png)
+
+Als letztes musst du dich noch einmal anmelden:
+
+![Schritt 6 - Beim Dropbox-Programm anmelden](images/dropbox-06.png)
+
+... und dann den Dropbox-Ordner öffnen:
+
+![Schritt 7 - Dropbox-Ordner öffnen](images/dropbox-07.png)
+
+Ab hier kannst du einsteigen, wenn du bereits ein Dropbox-Konto hattest. Lege einen neuen Ordner an:
+
+![Schritt 8 - Neuen Ordner anlegen](images/dropbox-08.png)
+
+... und nenne ihn "javascript-lernen". Gib ihn dann per Rechtsklick frei:
+
+![Schritt 9 - ... und freigeben](images/dropbox-09.png)
+
+... und ziehe ihn auf den Atom-Editor im Dock:
+
+![Schritt 10 - Ordner im Editor öffnen](images/dropbox-10.png)
+
+Der Atom-Editor öffnet den Ordner und automatisch eine Datei "index.html" darin:
+
+![Schritt 11 - Ordner im Editor](images/dropbox-11.png)
+
+Wenn du jetzt einen kurzen Text in diese Datei eingibst und die beiden Tasten CMD-S gleichzeitig drückst, wird die Datei gespeichert.
+
+Öffne den Ordner im Finder, rechts-klicke die Datei index.html und gib einen Link auf sie frei:
+
+![Schritt 12 - Datei freigeben](images/dropbox-12.png)
+
+Nach einem kurzen Augenblick meldet Dropbox, dass der Link freigegeben ist. Wechsele nun zum Chrome-Browser und füge die öffentliche Adresse deiner HTML-Seite in den Browser ein:
+
+![Schritt 13 - ... und im Browser aufrufen](images/dropbox-13.png)
+
+Wie gesagt, die Adresse der Datei bei mir ist dann [https://dl.dropboxusercontent.com/s/zii4gpgte0nc6l5/index.html](dl.dropboxusercontent.com/s/zii4gpgte0nc6l5/index.html).
+
+Ersetze nun deinen einfachen Text durch das Gerüst einer einfachen HTML-Seite:
+
+<<[Eine einfache HTML-Seite](code/erste-seite.html)
+
+Dies ist [eine der Beispielseiten aus Bootstrap](http://getbootstrap.com/examples/cover/)
+
+Damit die Seite auch bei dir ordentlich aussieht, musst du noch eine zweite Datei mit Namen "cover.css" anlegen und folgendes hineinkopieren:
+
+<<[Ein Stylesheet](code/cover.css)
+
+Leider sind die öffentlichen Links, die Dropbox erzeugt, so gebaut, dass man die Links einzeln erzeugen muss. Erzeuge also wieder per Rechtsklick einen Freigabelink für die Datei cover.css und füge diesen Link in Zeile 15 deiner HTML-Seite ein. Nach dem Neuladen der Seite mit CMD-R sollte die Seite so aussehen:
+
+![Erste öffentliche HTML-Seite](images/erste-seite.png)
+
+Die Datei cover.css ist das unveränderte Stylesheet der Bootstrap-Beispielseite. Hm, ich habe Stylesheets noch nicht erklärt? Neben HTML- und Javascript sind Cascading Style Sheets ("CSS") der dritte Bestandteil einer modernen Webseite oder App. Viel zu kompliziert alles? Du hast Recht. Allerdings hat jedes dieser Formate eine eigene Rolle:
+
+* HTML bildet die Grundstruktur der Seite. Hier wird festgelegt, welche Elemente und Texte überhaupt auf der Seite vorhanden sind.
+* Javascript beschreibt das Verhalten der Seite. Was soll passieren, wenn ein Knopf gedrückt wird oder wenn ein Raumschiff in einen Asterioiden kracht.
+* Stylesheets (oder "CSS") bestimmen das Aussehen der HTML-Elemente.
+
+In der Anfangszeit des Web gab es Stylesheets noch nicht und Web-Designer mussten sich mit einfachsten Mitteln behelfen. Heute kann man mit Stylesheets Farben, Größen, Anordnung, Abstände, und neuerdings auch Eigenschaften wir Rundungen und Schatten und sogar einfache Animationen festlegen. In diesem Buch soll es aber nur am Rand um Styling gehen, daher will ich jetzt hierbei belassen. 
