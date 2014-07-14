@@ -2,3 +2,4 @@ frontmatter:
 mainmatter:
 kapitel1.txt
 kapitel2.txt
+kapitel3.txt
