@@ -1,14 +1,20 @@
-# 3 - Eine öffentliche Webseite
+# 3 - Eine öffentliche Webseite erstellen
 
-Bisher haben wir uns damit begnügt, kleine Beispiele in jsfiddle oder einfach in der Konsole des Browsers auszuprobieren. Wenn wir jetzt ein erstes Spiel schreiben wollen, brauchst du aber einen Weg, um eine Seite im WWW zu veröffentlichen.
+Bisher haben wir uns damit begnügt, kleine Beispiele in jsfiddle oder einfach in der Konsole des Browsers auszuprobieren. Wenn wir jetzt ein erstes Spiel schreiben wollen, brauchst du aber einen Weg, um eine Seite im WWW zu veröffentlichen. Es gibt dazu eine ganze Menge Möglichkeiten. In diesem Kapitel stelle ich dir zwei Wege vor, kostenlose Websites einzurichten und zu pflegen: Dropbox und Github Pages.
 
-Es gibt dazu eine ganze Menge Möglichkeiten. Die wahrscheinlich einfachste Variante funktioniert mit [Dropbox](https://www.dropbox.com/). Dropbox ist eine Firma, die dir kostenlos 5 GByte Speicherplatz _in der Cloud_ zur Verfügung stellt. Du benutzt Dropbox über einen besonderen Ordner auf deinem Computer. Alle Dateien, die du in diesen Ordner legst, werden automatisch auf die Dropbox-Server übertragen. Von dort sind sie auch auf all deinen anderen Geräten (andere Computer, Tablets, Handys) erreichbar.
+Wenn du wirklich einmal eine komplette eigene Website erstellen willst, etwa zur Vermarktung deines ersten Spieles oder zum Aufbau einer Online-Community, schau dir einmal die Provider  [Hetzner](http://www.hetzner.de/hosting/produkte_webspace/level1) oder [OVH](http://www.ovh.de/virtual_server/vps-classic.xml) an. Beide sind zwar nicht umsonst, bieten aber schon für Beträge ab 2 € kleine Websites mit eigener Domain und haben einen guten Service. Auch [Uberspace](https://uberspace.de/) ist sehr beliebt. Die habe ich aber persönlich noch nicht ausprobiert.
+
+## Dropbox einrichten
+
+Die wahrscheinlich einfachste Variante zum Hosten einzelner Webseiten funktioniert mit [Dropbox](https://www.dropbox.com/). Vielleicht nutzt du Dropbox ja schon, um Dateien gleichzeitig auf deinem Computer und deinen anderen Geräten zu nutzen oder sie mit Freunden auszutauschen. Dann kannst du mit Dropbox schnell einzelne Seiten veröffentlichen. Allerdings wird Dropbox alleine bei größeren Seiten schnell unübersichtlich. Auch hat es den Nachteil, dass man keinen eigenen Domainnamen nutzen kann.
+
+Dropbox ist eine Firma, die dir kostenlos 5 GByte Speicherplatz _in der Cloud_ zur Verfügung stellt. Du benutzt Dropbox über einen besonderen Ordner auf deinem Computer. Alle Dateien, die du in diesen Ordner legst, werden automatisch auf die Dropbox-Server übertragen. Von dort sind sie auch auf all deinen anderen Geräten (andere Computer, Tablets, Handys) erreichbar.
 
 Das ist an sich schon sehr nützlich. Du kannst auch Ordner für deine Freunde freigeben und so Dateien (Fotos, Hausaufgaben usw.) mit ihnen austauschen. In jedem angeschlossenen Gerät tauchen automatisch neue und geänderte Dateien auf.
 
-Für unsere Webseite wollen wir ausnutzen, dass du mit Dropbox auch Dateien frei im Internet veröffentlichen kannst. Die Adresse dieser Dateien ist zwar nicht sehr hübsch (z.B. https://dl.dropboxusercontent.com/s/zii4gpgte0nc6l5/index.html), aber Dropbox ist wirklich das einfachste Verfahren, Dateien ins Netz zu stellen. Für hübschere Adressen gibt es auch Dienste wie z.B. [Bitly](https://bitly.com/). Dort habe ich die Adresse [l.olav.net/erste-seite](http://l.olav.net/erste-seite) für den hässlichen Link gesichert. Bitly richtet dann eine Weiterleitung auf die Seite unter dl.dropboxusercontent.com ein.
+Für unsere Webseite wollen wir ausnutzen, dass du mit Dropbox auch Dateien frei im Internet veröffentlichen kannst. Die Adresse dieser Dateien ist zwar nicht sehr hübsch (z.B. [dl.dropboxusercontent.com/s/zii4gpgte0nc6l5/index.html](https://dl.dropboxusercontent.com/s/zii4gpgte0nc6l5/index.html), aber Dropbox ist wirklich das einfachste Verfahren, Dateien ins Netz zu stellen. Für hübschere Adressen gibt es auch Dienste wie z.B. [Bitly](https://bitly.com/). Dort habe ich die Adresse [l.olav.net/erste-seite](http://l.olav.net/erste-seite) für den hässlichen Link gesichert. Bitly richtet dann eine Weiterleitung auf die Seite unter dl.dropboxusercontent.com ein.
 
-Wenn du wirklich einmal eine komplette eigene Website erstellen willst, etwa zur Vermarktung deines ersten Spieles oder zum Aufbau einer Online-Community, schau dir einmal die Provider [Uberspace]() oder [Hetzner](http://www.hetzner.de/) an. Beide sind zwar nicht umsonst, bieten aber sehr viel fürs Geld und haben einen super Service.
+Darüber hinaus gibt es spezielle Dienste wie [Brace](http://brace.io/), [droppages](http://droppages.com/), [harp.io](https://www.harp.io/), [kissr](https://www.kissr.com/), [scriptogr.am](http://scriptogr.am/) [site44](http://www.site44.com/) oder  [dockbox](http://www.dropboxwiki.com/tips-and-tricks/dockbox-io). Alle diese Dienste - bis auf dockbox - sind leider kostenpflichtig. dockbox funktionierte bei mir nicht.
 
 Aber zurück zu Dropbox. Wenn du noch kein Dropbox-Nutzer bist, musst du dich zunächst auf deren Website registrieren und das Dropbox-Programm installieren. Hast du bereits ein Dropbox-Konto, kannst du bei Schritt 8 einsteigen.
 
@@ -64,7 +70,7 @@ Nach einem kurzen Augenblick meldet Dropbox, dass der Link freigegeben ist. Wech
 
 ![Schritt 13 - ... und im Browser aufrufen](images/dropbox-13.png)
 
-Wie gesagt, die Adresse der Datei bei mir ist dann [https://dl.dropboxusercontent.com/s/zii4gpgte0nc6l5/index.html](dl.dropboxusercontent.com/s/zii4gpgte0nc6l5/index.html).
+Wie gesagt, die Adresse der Datei bei mir ist dann [dl.dropboxusercontent.com/s/zii4gpgte0nc6l5/index.html](dl.dropboxusercontent.com/s/zii4gpgte0nc6l5/index.html).
 
 Ersetze nun deinen einfachen Text durch das Gerüst einer einfachen HTML-Seite:
 
@@ -76,7 +82,7 @@ Damit die Seite auch bei dir ordentlich aussieht, musst du noch eine zweite Date
 
 <<[Ein Stylesheet](code/cover.css)
 
-Leider sind die öffentlichen Links, die Dropbox erzeugt, so gebaut, dass man die Links einzeln erzeugen muss. Erzeuge also wieder per Rechtsklick einen Freigabelink für die Datei cover.css und füge diesen Link in Zeile 15 deiner HTML-Seite ein. Nach dem Neuladen der Seite mit CMD-R sollte die Seite so aussehen:
+Leider sind die öffentlichen Links, die Dropbox für freigegebene Dateien erzeugt, so gebaut, dass man die Links pro Datei einzeln erzeugen muss. Erzeuge also wieder per Rechtsklick einen Freigabelink für die Datei cover.css und füge diesen Link in Zeile 15 deiner HTML-Seite ein. Nach dem Neuladen der Seite mit CMD-R sollte die Seite so aussehen:
 
 ![Erste öffentliche HTML-Seite](images/erste-seite.png)
 
@@ -86,4 +92,4 @@ Die Datei cover.css ist das unveränderte Stylesheet der Bootstrap-Beispielseite
 * Javascript beschreibt das Verhalten der Seite. Was soll passieren, wenn ein Knopf gedrückt wird oder wenn ein Raumschiff in einen Asterioiden kracht.
 * Stylesheets (oder "CSS") bestimmen das Aussehen der HTML-Elemente.
 
-In der Anfangszeit des Web gab es Stylesheets noch nicht und Web-Designer mussten sich mit einfachsten Mitteln behelfen. Heute kann man mit Stylesheets Farben, Größen, Anordnung, Abstände, und neuerdings auch Eigenschaften wir Rundungen und Schatten und sogar einfache Animationen festlegen. In diesem Buch soll es aber nur am Rand um Styling gehen, daher will ich jetzt hierbei belassen. 
+In der Anfangszeit des Web gab es Stylesheets noch nicht und Web-Designer mussten sich mit einfachsten Mitteln behelfen. Heute kann man mit Stylesheets Farben, Größen, Anordnung, Abstände, und neuerdings auch Eigenschaften wir Rundungen und Schatten und sogar einfache Animationen festlegen. In diesem Buch soll es aber nur am Rand um Styling gehen, daher will ich jetzt hierbei belassen.
