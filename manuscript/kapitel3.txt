@@ -14,7 +14,7 @@ Das ist an sich schon sehr nützlich. Du kannst auch Ordner für deine Freunde f
 
 Für unsere Webseite wollen wir ausnutzen, dass du mit Dropbox auch Dateien frei im Internet veröffentlichen kannst. Die Adresse dieser Dateien ist zwar nicht sehr hübsch (z.B. [dl.dropboxusercontent.com/s/zii4gpgte0nc6l5/index.html](https://dl.dropboxusercontent.com/s/zii4gpgte0nc6l5/index.html), aber Dropbox ist wirklich das einfachste Verfahren, Dateien ins Netz zu stellen. Für hübschere Adressen gibt es auch Dienste wie z.B. [Bitly](https://bitly.com/). Dort habe ich die Adresse [l.olav.net/erste-seite](http://l.olav.net/erste-seite) für den hässlichen Link gesichert. Bitly richtet dann eine Weiterleitung auf die Seite unter dl.dropboxusercontent.com ein.
 
-Darüber hinaus gibt es spezielle Dienste wie [Brace](http://brace.io/), [droppages](http://droppages.com/), [harp.io](https://www.harp.io/), [kissr](https://www.kissr.com/), [scriptogr.am](http://scriptogr.am/) [site44](http://www.site44.com/) oder  [dockbox](http://www.dropboxwiki.com/tips-and-tricks/dockbox-io). Alle diese Dienste - bis auf dockbox - sind leider kostenpflichtig. dockbox funktionierte bei mir nicht.
+Darüber hinaus gibt es spezielle Dienste wie [Brace](http://brace.io/), [droppages](http://droppages.com/), [harp.io](https://www.harp.io/), [kissr](https://www.kissr.com/), [scriptogr.am](http://scriptogr.am/) [site44](http://www.site44.com/) oder  [dockbox](http://www.dropboxwiki.com/tips-and-tricks/dockbox-io). Die meisten dieser Dienste - bis auf dockbox und scriptogr.am - sind leider kostenpflichtig. dockbox funktionierte bei mir nicht. Scriptogr.am ist eher zum Betrieb eines Weblogs gedacht.
 
 Aber zurück zu Dropbox. Wenn du noch kein Dropbox-Nutzer bist, musst du dich zunächst auf deren Website registrieren und das Dropbox-Programm installieren. Hast du bereits ein Dropbox-Konto, kannst du bei Schritt 8 einsteigen.
 
@@ -93,3 +93,7 @@ Die Datei cover.css ist das unveränderte Stylesheet der Bootstrap-Beispielseite
 * Stylesheets (oder "CSS") bestimmen das Aussehen der HTML-Elemente.
 
 In der Anfangszeit des Web gab es Stylesheets noch nicht und Web-Designer mussten sich mit einfachsten Mitteln behelfen. Heute kann man mit Stylesheets Farben, Größen, Anordnung, Abstände, und neuerdings auch Eigenschaften wir Rundungen und Schatten und sogar einfache Animationen festlegen. In diesem Buch soll es aber nur am Rand um Styling gehen, daher will ich jetzt hierbei belassen.
+
+## Eine Website mit Github Pages
+
+[Github](https://github.com/) ist ein sehr beliebter Dienst, auf dem man seine Software-Projekte speichern und mit anderen Entwicklern zusammenarbeiten kann. Github bietet einen eigenen Dienst zum Betrieb von Websites an. Oliver Doetsch hat eine [ausführliche Anleitung](http://www.5202.de/2014/01/tutorialgithubindex2.html) zum Einrichten einer Website mit Github Pages geschrieben, die ich hier nicht zu wiederholen brauche.
